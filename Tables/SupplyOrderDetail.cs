@@ -22,5 +22,8 @@ namespace InventoryManagementSystem.Tables
 
         public int ExpirationPeriod { get; set; }
 
+        public virtual Item Item { get; set; }
+
+        public virtual SupplyOrder SupplyOrder { get; set; }
     }
 }

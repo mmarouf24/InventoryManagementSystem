@@ -25,6 +25,11 @@ namespace InventoryManagementSystem.Tables
         public DateTime ProductionDate { get; set; }
 
         public int ExpirationPeriod { get; set; }
+        public virtual Item Item { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
+
+        public virtual StockTransfer StockTransfer { get; set; }
 
     }
 }

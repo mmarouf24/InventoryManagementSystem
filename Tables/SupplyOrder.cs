@@ -10,6 +10,11 @@ namespace InventoryManagementSystem.Tables
 {
     public class SupplyOrder
     {
+        public SupplyOrder()
+        {
+            SupplyOrderDetails = new HashSet<SupplyOrderDetail>();
+        }
+
         public int SupplyOrderID { get; set; }
 
         public int WarehouseID { get; set; }
@@ -17,13 +22,17 @@ namespace InventoryManagementSystem.Tables
         public int SupplierID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [MaxLength(50)]
         public string OrderNumber { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime OrderDate { get; set; }
 
+        public virtual Supplier Supplier { get; set; }
 
+        public virtual ICollection<SupplyOrderDetail> SupplyOrderDetails { get; set; }
+
+        public virtual Warehouse Warehouse { get; set; }
 
     }
 }

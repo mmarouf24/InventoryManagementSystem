@@ -9,24 +9,30 @@ namespace InventoryManagementSystem.Tables
 {
     public class Customer
     {
+        public Customer()
+        {
+            ReleaseOrders = new HashSet<ReleaseOrder>();
+        }
+
         public int CustomerID { get; set; }
         [Required]
-        [StringLength(100)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Phone { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Fax { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Mobile { get; set; }
 
-        [StringLength(100)]
+        [MaxLength(100)]
         public string Email { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Website { get; set; }
+        public virtual ICollection<ReleaseOrder> ReleaseOrders { get; set; }
     }
 }

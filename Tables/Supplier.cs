@@ -9,25 +9,33 @@ namespace InventoryManagementSystem.Tables
 {
     public class Supplier
     {
+        public Supplier()
+        {
+            StockTransferDetails = new HashSet<StockTransferDetail>();
+            SupplyOrders = new HashSet<SupplyOrder>();
+        }
         public int SupplierID { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Phone { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Fax { get; set; }
 
-        [StringLength(20)]
+        [MaxLength(20)]
         public string Mobile { get; set; }
 
-        [StringLength(100)]
+        [MaxLength(100)]
         public string Email { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Website { get; set; }
+        public virtual ICollection<StockTransferDetail> StockTransferDetails { get; set; }
+
+        public virtual ICollection<SupplyOrder> SupplyOrders { get; set; }
     }
 }

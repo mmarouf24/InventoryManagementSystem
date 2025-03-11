@@ -10,6 +10,10 @@ namespace InventoryManagementSystem.Tables
 {
     public class ReleaseOrder
     {
+        public ReleaseOrder()
+        {
+            ReleaseOrderDetails = new HashSet<ReleaseOrderDetail>();
+        }
         public int ReleaseOrderID { get; set; }
 
         public int WarehouseID { get; set; }
@@ -17,10 +21,15 @@ namespace InventoryManagementSystem.Tables
         public int CustomerID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [MaxLength(50)]
         public string OrderNumber { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime OrderDate { get; set; }
+        public virtual Customer Customer { get; set; }
+
+        public virtual ICollection<ReleaseOrderDetail> ReleaseOrderDetails { get; set; }
+
+        public virtual Warehouse Warehouse { get; set; }
     }
 }
