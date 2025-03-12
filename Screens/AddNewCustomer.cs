@@ -12,10 +12,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagementSystem.Screens
 {
-    public partial class AddNewSupplier : Form
+    public partial class AddNewCustomer : Form
     {
         EFModel _Context;
-        public AddNewSupplier()
+        public AddNewCustomer()
         {
             InitializeComponent();
             _Context = new EFModel();
@@ -23,34 +23,34 @@ namespace InventoryManagementSystem.Screens
 
         private void ConfirmAdd_Click(object sender, EventArgs e)
         {
-            if (SupplierNameTextBox.Text == "" || SupplierMobileTextBox.Text == "")
+            if (CustomerNameTextBox.Text == "" || CustomerMobileTextBox.Text == "")
                 MessageBox.Show("Enter Data at least in Name & Mobile Fields !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                string name = SupplierNameTextBox.Text.Trim();
-                string phone = SupplierPhoneTextBox.Text.Trim();
-                string mobile = SupplierMobileTextBox.Text.Trim();
-                string fax = SupplierFaxTextBox.Text.Trim();
-                string email = SupplierEmailTextBox.Text.Trim();
-                string website = SupplierWebsiteTextBox.Text.Trim();
+                string name = CustomerNameTextBox.Text.Trim();
+                string phone = CustomerPhoneTextBox.Text.Trim();
+                string mobile = CustomerMobileTextBox.Text.Trim();
+                string fax = CustomerFaxTextBox.Text.Trim();
+                string email = CustomerEmailTextBox.Text.Trim();
+                string website = CustomerWebsiteTextBox.Text.Trim();
 
 
-                var ifExistedSupplier = _Context.Suppliers.FirstOrDefault(i => i.Mobile == mobile);
+                var ifExistedCustomer = _Context.Customers.FirstOrDefault(i => i.Mobile == mobile);
 
-                if (ifExistedSupplier == null)
+                if (ifExistedCustomer == null)
                 {
-                    var supplier = new Supplier();
+                    var customer = new Customer();
 
-                    supplier.Name = name;
-                    supplier.Phone = phone;
-                    supplier.Mobile = mobile;
-                    supplier.Fax = fax;
-                    supplier.Email = email;
-                    supplier.Website = website;
+                    customer.Name = name;
+                    customer.Phone = phone;
+                    customer.Mobile = mobile;
+                    customer.Fax = fax;
+                    customer.Email = email;
+                    customer.Website = website;
 
-                    _Context.Suppliers.Add(supplier);
+                    _Context.Customers.Add(customer);
                     _Context.SaveChanges();
-                    MessageBox.Show("Successfully Added Supplier !", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Successfully Added Customer !", "Success", MessageBoxButtons.OK);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

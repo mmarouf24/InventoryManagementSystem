@@ -48,11 +48,23 @@ namespace InventoryManagementSystem
             LoadSuppliersData();
             SupplierIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            //Customers Data
+            foreach (var customer in _Context.Customers.ToList())
+            {
+                CustomerIdComboBox.Items.Add(customer.CustomerID);
+            }
+            if (CustomerIdComboBox.Items.Count > 0)
+                CustomerIdComboBox.SelectedIndex = 0;
+            ConfigCustomersTextBoxes();
+            LoadCustomersData();
+            CustomerIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
 
 
         }
 
         //Item Start
+        #region Item
         private void LoadItemsData()
         {
             ItemsGridView.DataSource = _Context.Items.Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit }).ToList();
@@ -168,11 +180,11 @@ namespace InventoryManagementSystem
                 LoadItemsData();
             }
         }
-
+        #endregion
         //Item End
 
         //Warehouse Start
-
+        #region Warehouse
         private void ConfigWarehousesTextBoxes()
         {
             var item = _Context.Warehouses.Find(WarehouseIdComboBox.SelectedItem);
@@ -275,10 +287,11 @@ namespace InventoryManagementSystem
 
             ConfigWarehousesTextBoxes();
         }
-
+        #endregion
         //Warehouse End
 
         //Supplier Start
+        #region Supplier
         private void ConfigSuppliersTextBoxes()
         {
             var item = _Context.Suppliers.Find(SupplierIdComboBox.SelectedItem);
@@ -311,7 +324,7 @@ namespace InventoryManagementSystem
 
             if (SupplierIdComboBox.Items.Count > 0)
             {
-                bool isCodeExists = _Context.Suppliers.Any(i => i.Mobile == name && i.SupplierID != int.Parse(SupplierIdComboBox.SelectedItem.ToString()));
+                bool isCodeExists = _Context.Suppliers.Any(i => i.Mobile == mobile && i.SupplierID != int.Parse(SupplierIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
                 {
@@ -389,11 +402,126 @@ namespace InventoryManagementSystem
                 LoadSuppliersData();
             }
         }
-
-
-       
-
+        #endregion
         //Supplier End
+
+
+        //Customer Start
+        #region Customer
+        private void ConfigCustomersTextBoxes()
+        {
+            var item = _Context.Customers.Find(CustomerIdComboBox.SelectedItem);
+            if (item != null)
+            {
+                CustomerNameTextBox.Text = item.Name;
+                CustomerPhoneTextBox.Text = item.Phone;
+                CustomerMobileTextBox.Text = item.Mobile;
+                CustomerFaxTextBox.Text = item.Fax;
+                CustomerEmailTextBox.Text = item.Email;
+                CustomerWebsiteTextBox.Text = item.Website;
+            }
+        }
+        private void LoadCustomersData()
+        {
+            CustomersGridView.DataSource = _Context.Customers
+                                        .Select(i => new { i.CustomerID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                                        .ToList();
+        }
+
+        private void EditCustomer_Click(object sender, EventArgs e)
+        {
+            string name = CustomerNameTextBox.Text.Trim();
+            string phone = CustomerPhoneTextBox.Text.Trim();
+            string mobile = CustomerMobileTextBox.Text.Trim();
+            string fax = CustomerFaxTextBox.Text.Trim();
+            string email = CustomerEmailTextBox.Text.Trim();
+            string website = CustomerWebsiteTextBox.Text.Trim();
+
+            if (CustomerIdComboBox.Items.Count > 0)
+            {
+                bool isCodeExists = _Context.Customers.Any(i => i.Mobile == mobile && i.CustomerID != int.Parse(CustomerIdComboBox.SelectedItem.ToString()));
+
+                if (isCodeExists)
+                {
+                    MessageBox.Show("Editing Failed!, The Phone you entered is already existed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var ExistedCustomer = _Context.Customers.Find(CustomerIdComboBox.SelectedItem);
+
+
+                ExistedCustomer.Name = name;
+                ExistedCustomer.Phone = phone;
+                ExistedCustomer.Mobile = mobile;
+                ExistedCustomer.Fax = fax;
+                ExistedCustomer.Email = email;
+                ExistedCustomer.Website = website;
+                _Context.SaveChanges();
+                MessageBox.Show("Successfully Edited Customer !", "Success", MessageBoxButtons.OK);
+                LoadCustomersData();
+            }
+            else
+                MessageBox.Show("No Customers To Edit!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void DeleteCustomer_Click(object sender, EventArgs e)
+        {
+            if (CustomerIdComboBox.Items.Count > 0)
+            {
+                var CustomerToDelete = _Context.Customers.Find(CustomerIdComboBox.SelectedItem);
+                _Context.Customers.Remove(CustomerToDelete);
+                _Context.SaveChanges();
+                MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButtons.OK);
+                CustomerIdComboBox.Items.Remove(CustomerIdComboBox.SelectedItem);
+                if (CustomerIdComboBox.Items.Count > 0)
+                    CustomerIdComboBox.SelectedIndex = 0;
+                ConfigCustomersTextBoxes();
+                LoadCustomersData();
+            }
+            else
+                MessageBox.Show("No Customers To Delete!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void CustomerSearchNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string Term = CustomerSearchNameTextBox.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(Term))
+            {
+                CustomersGridView.DataSource = _Context.Customers
+                    .Select(i => new { i.CustomerID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                    .ToList();
+                return;
+            }
+
+            var ExistedCustomers = _Context.Customers
+                            .Where(i => i.Name.ToLower().Contains(Term))
+                            .Select(i => new { i.CustomerID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                            .ToList();
+            if (ExistedCustomers.Any())
+                CustomersGridView.DataSource = ExistedCustomers;
+        }
+
+        private void CustomerIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConfigCustomersTextBoxes();
+        }
+
+        private void AddCustomer_Click(object sender, EventArgs e)
+        {
+            AddNewCustomer addForm = new AddNewCustomer();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                CustomerIdComboBox.Items.Add(_Context.Customers.Order().Last().CustomerID);
+                LoadCustomersData();
+            }
+        }
+
+
+        #endregion
+        //Customer End
+
 
     }
 }

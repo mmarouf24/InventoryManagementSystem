@@ -40,6 +40,10 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -94,6 +98,27 @@
             SupplierNameTextBox = new TextBox();
             SupplierPhoneTextBox = new TextBox();
             SupplierGridView = new DataGridView();
+            Customers = new TabPage();
+            CustomerWebsiteTextBox = new TextBox();
+            CustomerEmailTextBox = new TextBox();
+            label15 = new Label();
+            label16 = new Label();
+            CustomerMobileTextBox = new TextBox();
+            AddCustomer = new Button();
+            label17 = new Label();
+            CustomerSearchNameTextBox = new TextBox();
+            DeleteCustomer = new Button();
+            CustomerIdComboBox = new ComboBox();
+            label18 = new Label();
+            label19 = new Label();
+            EditCustomer = new Button();
+            label20 = new Label();
+            label21 = new Label();
+            label22 = new Label();
+            CustomerFaxTextBox = new TextBox();
+            CustomerNameTextBox = new TextBox();
+            CustomerPhoneTextBox = new TextBox();
+            CustomersGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -103,6 +128,8 @@
             ((System.ComponentModel.ISupportInitialize)WarehousesGridview).BeginInit();
             Suppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SupplierGridView).BeginInit();
+            Customers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CustomersGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,6 +138,7 @@
             Tabs.Controls.Add(Items);
             Tabs.Controls.Add(Warehouse);
             Tabs.Controls.Add(Suppliers);
+            Tabs.Controls.Add(Customers);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
@@ -733,6 +761,239 @@
             SupplierGridView.Size = new Size(1352, 323);
             SupplierGridView.TabIndex = 16;
             // 
+            // Customers
+            // 
+            Customers.Controls.Add(CustomerWebsiteTextBox);
+            Customers.Controls.Add(CustomerEmailTextBox);
+            Customers.Controls.Add(label15);
+            Customers.Controls.Add(label16);
+            Customers.Controls.Add(CustomerMobileTextBox);
+            Customers.Controls.Add(AddCustomer);
+            Customers.Controls.Add(label17);
+            Customers.Controls.Add(CustomerSearchNameTextBox);
+            Customers.Controls.Add(DeleteCustomer);
+            Customers.Controls.Add(CustomerIdComboBox);
+            Customers.Controls.Add(label18);
+            Customers.Controls.Add(label19);
+            Customers.Controls.Add(EditCustomer);
+            Customers.Controls.Add(label20);
+            Customers.Controls.Add(label21);
+            Customers.Controls.Add(label22);
+            Customers.Controls.Add(CustomerFaxTextBox);
+            Customers.Controls.Add(CustomerNameTextBox);
+            Customers.Controls.Add(CustomerPhoneTextBox);
+            Customers.Controls.Add(CustomersGridView);
+            Customers.Location = new Point(4, 84);
+            Customers.Name = "Customers";
+            Customers.Padding = new Padding(3);
+            Customers.Size = new Size(1358, 541);
+            Customers.TabIndex = 3;
+            Customers.Text = "Customers";
+            Customers.UseVisualStyleBackColor = true;
+            // 
+            // CustomerWebsiteTextBox
+            // 
+            CustomerWebsiteTextBox.Location = new Point(631, 109);
+            CustomerWebsiteTextBox.Name = "CustomerWebsiteTextBox";
+            CustomerWebsiteTextBox.Size = new Size(310, 27);
+            CustomerWebsiteTextBox.TabIndex = 56;
+            // 
+            // CustomerEmailTextBox
+            // 
+            CustomerEmailTextBox.Location = new Point(631, 63);
+            CustomerEmailTextBox.Name = "CustomerEmailTextBox";
+            CustomerEmailTextBox.Size = new Size(310, 27);
+            CustomerEmailTextBox.TabIndex = 55;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(515, 67);
+            label15.Name = "label15";
+            label15.Size = new Size(47, 20);
+            label15.TabIndex = 54;
+            label15.Text = "Email";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(515, 113);
+            label16.Name = "label16";
+            label16.Size = new Size(66, 20);
+            label16.TabIndex = 53;
+            label16.Text = "Website";
+            // 
+            // CustomerMobileTextBox
+            // 
+            CustomerMobileTextBox.Location = new Point(140, 153);
+            CustomerMobileTextBox.Name = "CustomerMobileTextBox";
+            CustomerMobileTextBox.Size = new Size(342, 27);
+            CustomerMobileTextBox.TabIndex = 52;
+            // 
+            // AddCustomer
+            // 
+            AddCustomer.Location = new Point(1006, 5);
+            AddCustomer.Name = "AddCustomer";
+            AddCustomer.Size = new Size(310, 55);
+            AddCustomer.TabIndex = 51;
+            AddCustomer.Text = "Add Customer";
+            AddCustomer.UseVisualStyleBackColor = true;
+            AddCustomer.Click += AddCustomer_Click;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(1103, 79);
+            label17.Name = "label17";
+            label17.Size = new Size(123, 20);
+            label17.TabIndex = 50;
+            label17.Text = "Search By Name";
+            // 
+            // CustomerSearchNameTextBox
+            // 
+            CustomerSearchNameTextBox.Location = new Point(1006, 113);
+            CustomerSearchNameTextBox.Name = "CustomerSearchNameTextBox";
+            CustomerSearchNameTextBox.Size = new Size(310, 27);
+            CustomerSearchNameTextBox.TabIndex = 49;
+            CustomerSearchNameTextBox.TextChanged += CustomerSearchNameTextBox_TextChanged;
+            // 
+            // DeleteCustomer
+            // 
+            DeleteCustomer.Location = new Point(631, 151);
+            DeleteCustomer.Name = "DeleteCustomer";
+            DeleteCustomer.Size = new Size(150, 43);
+            DeleteCustomer.TabIndex = 48;
+            DeleteCustomer.Text = "Delete Customer";
+            DeleteCustomer.UseVisualStyleBackColor = true;
+            DeleteCustomer.Click += DeleteCustomer_Click;
+            // 
+            // CustomerIdComboBox
+            // 
+            CustomerIdComboBox.FormattingEnabled = true;
+            CustomerIdComboBox.Location = new Point(140, 16);
+            CustomerIdComboBox.Name = "CustomerIdComboBox";
+            CustomerIdComboBox.Size = new Size(342, 28);
+            CustomerIdComboBox.TabIndex = 47;
+            CustomerIdComboBox.SelectedIndexChanged += CustomerIdComboBox_SelectedIndexChanged;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(37, 19);
+            label18.Name = "label18";
+            label18.Size = new Size(97, 20);
+            label18.TabIndex = 46;
+            label18.Text = "Customer ID";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(43, 153);
+            label19.Name = "label19";
+            label19.Size = new Size(57, 20);
+            label19.TabIndex = 45;
+            label19.Text = "Mobile";
+            // 
+            // EditCustomer
+            // 
+            EditCustomer.Location = new Point(791, 151);
+            EditCustomer.Name = "EditCustomer";
+            EditCustomer.Size = new Size(150, 43);
+            EditCustomer.TabIndex = 44;
+            EditCustomer.Text = "Edit Customer";
+            EditCustomer.UseVisualStyleBackColor = true;
+            EditCustomer.Click += EditCustomer_Click;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(515, 20);
+            label20.Name = "label20";
+            label20.Size = new Size(33, 20);
+            label20.TabIndex = 43;
+            label20.Text = "Fax";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(43, 63);
+            label21.Name = "label21";
+            label21.Size = new Size(51, 20);
+            label21.TabIndex = 42;
+            label21.Text = "Name";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(43, 109);
+            label22.Name = "label22";
+            label22.Size = new Size(53, 20);
+            label22.TabIndex = 41;
+            label22.Text = "Phone";
+            // 
+            // CustomerFaxTextBox
+            // 
+            CustomerFaxTextBox.Location = new Point(631, 17);
+            CustomerFaxTextBox.Name = "CustomerFaxTextBox";
+            CustomerFaxTextBox.Size = new Size(310, 27);
+            CustomerFaxTextBox.TabIndex = 40;
+            // 
+            // CustomerNameTextBox
+            // 
+            CustomerNameTextBox.Location = new Point(140, 60);
+            CustomerNameTextBox.Name = "CustomerNameTextBox";
+            CustomerNameTextBox.Size = new Size(342, 27);
+            CustomerNameTextBox.TabIndex = 39;
+            // 
+            // CustomerPhoneTextBox
+            // 
+            CustomerPhoneTextBox.Location = new Point(140, 106);
+            CustomerPhoneTextBox.Name = "CustomerPhoneTextBox";
+            CustomerPhoneTextBox.Size = new Size(342, 27);
+            CustomerPhoneTextBox.TabIndex = 38;
+            // 
+            // CustomersGridView
+            // 
+            dataGridViewCellStyle13.BackColor = Color.White;
+            dataGridViewCellStyle13.ForeColor = Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = Color.DarkCyan;
+            CustomersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            CustomersGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CustomersGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            CustomersGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.Teal;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            CustomersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            CustomersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.White;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle15.SelectionForeColor = Color.White;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.False;
+            CustomersGridView.DefaultCellStyle = dataGridViewCellStyle15;
+            CustomersGridView.Dock = DockStyle.Bottom;
+            CustomersGridView.EnableHeadersVisualStyles = false;
+            CustomersGridView.Location = new Point(3, 215);
+            CustomersGridView.Name = "CustomersGridView";
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle16.ForeColor = Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            CustomersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            CustomersGridView.RowHeadersWidth = 51;
+            CustomersGridView.Size = new Size(1352, 323);
+            CustomersGridView.TabIndex = 37;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Teal;
@@ -750,9 +1011,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(472, 24);
             label1.Name = "label1";
-            label1.Size = new Size(428, 67);
+            label1.Size = new Size(431, 67);
             label1.TabIndex = 0;
-            label1.Text = "My WAREHOUSE";
+            label1.Text = "MY WAREHOUSE";
             // 
             // Form1
             // 
@@ -777,6 +1038,9 @@
             Suppliers.ResumeLayout(false);
             Suppliers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)SupplierGridView).EndInit();
+            Customers.ResumeLayout(false);
+            Customers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CustomersGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -833,7 +1097,7 @@
         private Label label11;
         private Label label12;
         private TextBox SupplierFaxTextBox;
-        private TextBox textBox3;
+        private TextBox CustomerMobileTextBox;
         private TextBox SupplierPhoneTextBox;
         private DataGridView SupplierGridView;
         private TextBox SupplierWebsiteTextBox;
@@ -842,5 +1106,25 @@
         private Label label13;
         private TextBox SupplierMobileTextBox;
         private TextBox SupplierNameTextBox;
+        private TabPage Customers;
+        private TextBox CustomerWebsiteTextBox;
+        private TextBox CustomerEmailTextBox;
+        private Label label15;
+        private Label label16;
+        private Button AddCustomer;
+        private Label label17;
+        private TextBox CustomerSearchNameTextBox;
+        private Button DeleteCustomer;
+        private ComboBox CustomerIdComboBox;
+        private Label label18;
+        private Label label19;
+        private Button EditCustomer;
+        private Label label20;
+        private Label label21;
+        private Label label22;
+        private TextBox CustomerFaxTextBox;
+        private TextBox CustomerNameTextBox;
+        private TextBox CustomerPhoneTextBox;
+        private DataGridView CustomersGridView;
     }
 }
