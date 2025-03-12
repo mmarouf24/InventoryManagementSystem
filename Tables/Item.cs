@@ -26,6 +26,7 @@ namespace InventoryManagementSystem.Tables
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
+        [Required]
         public int Quantity { get; set; }
         [Required]
         [MaxLength(50)]

@@ -23,7 +23,7 @@ namespace InventoryManagementSystem.Screens
 
         }
 
-        private void ConfirmAddItem_Click(object sender, EventArgs e)
+        private void ConfirmAdd_Click(object sender, EventArgs e)
         {
             if (WarehouseNameTextBox.Text == "" || WarehouseAddressTextBox.Text == "" || WarehouseMgrTextBox.Text == "")
                 MessageBox.Show("Enter Data in all Fields !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -58,7 +58,7 @@ namespace InventoryManagementSystem.Screens
             }
         }
 
-        private void CancelAddItem_Click(object sender, EventArgs e)
+        private void CancelAdd_Click(object sender, EventArgs e)
         {
             this.Close();
         }

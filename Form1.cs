@@ -21,8 +21,8 @@ namespace InventoryManagementSystem
             if (WarehouseIdComboBox.Items.Count > 0)
                 WarehouseIdComboBox.SelectedIndex = 0;
             ConfigWarehousesTextBoxes();
-            WarehouseIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             LoadWarehouseData();
+            WarehouseIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
 
             //Items Data
@@ -30,13 +30,46 @@ namespace InventoryManagementSystem
             {
                 ItemIDComboBox.Items.Add(item.ItemID);
             }
-            LoadItemsData();
             if (ItemIDComboBox.Items.Count > 0)
                 ItemIDComboBox.SelectedIndex = 0;
             ConfigItemsTextBoxes();
+            LoadItemsData();
             UnitComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ItemIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            //Suppliers Data
+            foreach (var supplier in _Context.Suppliers.ToList())
+            {
+                SupplierIdComboBox.Items.Add(supplier.SupplierID);
+            }
+            if (SupplierIdComboBox.Items.Count > 0)
+                SupplierIdComboBox.SelectedIndex = 0;
+            ConfigSuppliersTextBoxes();
+            LoadSuppliersData();
+            SupplierIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
+
+        }
+
+        //Item Start
+        private void LoadItemsData()
+        {
+            ItemsGridView.DataSource = _Context.Items.Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit }).ToList();
+
+        }
+
+        private void ConfigItemsTextBoxes()
+        {
+            var item = _Context.Items.Find(ItemIDComboBox.SelectedItem);
+            if (item != null)
+            {
+                ItemCodeTextBox.Text = item.Code;
+                ItemNameTextBox.Text = item.Name;
+                ItemQuantityTextBox.Text = item.Quantity.ToString();
+
+                UnitComboBox.SelectedItem = item.Unit;
+            }
         }
 
         private void EditItem_Click(object sender, EventArgs e)
@@ -82,33 +115,9 @@ namespace InventoryManagementSystem
 
         }
 
-
-
         private void ItemIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ConfigItemsTextBoxes();
-        }
-        private void ConfigItemsTextBoxes()
-        {
-            var item = _Context.Items.Find(ItemIDComboBox.SelectedItem);
-            if (item != null)
-            {
-                ItemCodeTextBox.Text = item.Code;
-                ItemNameTextBox.Text = item.Name;
-                ItemQuantityTextBox.Text = item.Quantity.ToString();
-
-                UnitComboBox.SelectedItem = item.Unit;
-            }
-        }
-        private void ConfigWarehousesTextBoxes()
-        {
-            var item = _Context.Warehouses.Find(WarehouseIdComboBox.SelectedItem);
-            if (item != null)
-            {
-                WarehouseNameTextBox.Text = item.Name;
-                WarehouseAddressTextBox.Text = item.Address;
-                WarehouseManagerTextBox.Text = item.Manager;
-            }
         }
 
         private void DeleteItem_Click(object sender, EventArgs e)
@@ -130,8 +139,6 @@ namespace InventoryManagementSystem
 
 
         }
-
-
 
         private void ItemSearchTextBox_KeyUp(object sender, KeyEventArgs e)
         {
@@ -161,10 +168,20 @@ namespace InventoryManagementSystem
                 LoadItemsData();
             }
         }
-        private void LoadItemsData()
-        {
-            ItemsGridView.DataSource = _Context.Items.Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit }).ToList();
 
+        //Item End
+
+        //Warehouse Start
+
+        private void ConfigWarehousesTextBoxes()
+        {
+            var item = _Context.Warehouses.Find(WarehouseIdComboBox.SelectedItem);
+            if (item != null)
+            {
+                WarehouseNameTextBox.Text = item.Name;
+                WarehouseAddressTextBox.Text = item.Address;
+                WarehouseManagerTextBox.Text = item.Manager;
+            }
         }
         private void LoadWarehouseData()
         {
@@ -258,5 +275,125 @@ namespace InventoryManagementSystem
 
             ConfigWarehousesTextBoxes();
         }
+
+        //Warehouse End
+
+        //Supplier Start
+        private void ConfigSuppliersTextBoxes()
+        {
+            var item = _Context.Suppliers.Find(SupplierIdComboBox.SelectedItem);
+            if (item != null)
+            {
+                SupplierNameTextBox.Text = item.Name;
+                SupplierPhoneTextBox.Text = item.Phone;
+                SupplierMobileTextBox.Text = item.Mobile;
+                SupplierFaxTextBox.Text = item.Fax;
+                SupplierEmailTextBox.Text = item.Email;
+                SupplierWebsiteTextBox.Text = item.Website;
+            }
+        }
+        private void LoadSuppliersData()
+        {
+            SupplierGridView.DataSource = _Context.Suppliers
+                                        .Select(i => new { i.SupplierID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                                        .ToList();
+
+        }
+
+        private void EditSupplier_Click(object sender, EventArgs e)
+        {
+            string name = SupplierNameTextBox.Text.Trim();
+            string phone = SupplierPhoneTextBox.Text.Trim();
+            string mobile = SupplierMobileTextBox.Text.Trim();
+            string fax = SupplierFaxTextBox.Text.Trim();
+            string email = SupplierEmailTextBox.Text.Trim();
+            string website = SupplierWebsiteTextBox.Text.Trim();
+
+            if (SupplierIdComboBox.Items.Count > 0)
+            {
+                bool isCodeExists = _Context.Suppliers.Any(i => i.Mobile == name && i.SupplierID != int.Parse(SupplierIdComboBox.SelectedItem.ToString()));
+
+                if (isCodeExists)
+                {
+                    MessageBox.Show("Editing Failed!, The Phone you entered is already existed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var ExistedSupplier = _Context.Suppliers.Find(SupplierIdComboBox.SelectedItem);
+
+
+                ExistedSupplier.Name = name;
+                ExistedSupplier.Phone = phone;
+                ExistedSupplier.Mobile = mobile;
+                ExistedSupplier.Fax = fax;
+                ExistedSupplier.Email = email;
+                ExistedSupplier.Website = website;
+                _Context.SaveChanges();
+                MessageBox.Show("Successfully Edited Supplier !", "Success", MessageBoxButtons.OK);
+                LoadSuppliersData();
+            }
+            else
+                MessageBox.Show("No Suppliers To Edit!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void DeleteSupplier_Click(object sender, EventArgs e)
+        {
+            if (SupplierIdComboBox.Items.Count > 0)
+            {
+                var SupplierToDelete = _Context.Suppliers.Find(SupplierIdComboBox.SelectedItem);
+                _Context.Suppliers.Remove(SupplierToDelete);
+                _Context.SaveChanges();
+                MessageBox.Show("Supplier deleted successfully!", "Success", MessageBoxButtons.OK);
+                SupplierIdComboBox.Items.Remove(SupplierIdComboBox.SelectedItem);
+                if (SupplierIdComboBox.Items.Count > 0)
+                    SupplierIdComboBox.SelectedIndex = 0;
+                ConfigSuppliersTextBoxes();
+                LoadSuppliersData();
+            }
+            else
+                MessageBox.Show("No Supplierss To Delete!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SupplierSearchNameTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            string Term = SupplierSearchNameTextBox.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(Term))
+            {
+                SupplierGridView.DataSource = _Context.Suppliers
+                    .Select(i => new { i.SupplierID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                    .ToList();
+                return;
+            }
+
+            var ExistedSuppliers = _Context.Suppliers
+                            .Where(i => i.Name.ToLower().Contains(Term))
+                            .Select(i => new { i.SupplierID, i.Name, i.Phone, i.Mobile, i.Fax, i.Email, i.Website })
+                            .ToList();
+            if (ExistedSuppliers.Any())
+                SupplierGridView.DataSource = ExistedSuppliers;
+        }
+
+        private void SupplierIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConfigSuppliersTextBoxes();
+        }
+
+        private void AddSupplier_Click(object sender, EventArgs e)
+        {
+            AddNewSupplier addForm = new AddNewSupplier();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                SupplierIdComboBox.Items.Add(_Context.Suppliers.Order().Last().SupplierID);
+                LoadSuppliersData();
+            }
+        }
+
+
+       
+
+        //Supplier End
+
     }
 }

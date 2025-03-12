@@ -36,6 +36,10 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -69,7 +73,27 @@
             WarehouseNameTextBox = new TextBox();
             WarehouseAddressTextBox = new TextBox();
             WarehousesGridview = new DataGridView();
-            tabPage3 = new TabPage();
+            Suppliers = new TabPage();
+            SupplierWebsiteTextBox = new TextBox();
+            SupplierEmailTextBox = new TextBox();
+            label14 = new Label();
+            label13 = new Label();
+            SupplierMobileTextBox = new TextBox();
+            AddSupplier = new Button();
+            label4 = new Label();
+            SupplierSearchNameTextBox = new TextBox();
+            DeleteSupplier = new Button();
+            SupplierIdComboBox = new ComboBox();
+            label8 = new Label();
+            label9 = new Label();
+            EditSupplier = new Button();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            SupplierFaxTextBox = new TextBox();
+            SupplierNameTextBox = new TextBox();
+            SupplierPhoneTextBox = new TextBox();
+            SupplierGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -77,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)ItemsGridView).BeginInit();
             Warehouse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)WarehousesGridview).BeginInit();
+            Suppliers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SupplierGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,8 +110,9 @@
             // 
             Tabs.Controls.Add(Items);
             Tabs.Controls.Add(Warehouse);
-            Tabs.Controls.Add(tabPage3);
+            Tabs.Controls.Add(Suppliers);
             Tabs.Dock = DockStyle.Bottom;
+            Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
             Tabs.Location = new Point(0, 113);
             Tabs.Name = "Tabs";
@@ -112,7 +139,7 @@
             Items.Controls.Add(ItemCodeTextBox);
             Items.Controls.Add(ItemNameTextBox);
             Items.Controls.Add(ItemsGridView);
-            Items.Font = new Font("Segoe UI", 11F);
+            Items.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             Items.Location = new Point(4, 84);
             Items.Name = "Items";
             Items.Padding = new Padding(3);
@@ -136,15 +163,15 @@
             SearchByItemCode.AutoSize = true;
             SearchByItemCode.Location = new Point(1089, 100);
             SearchByItemCode.Name = "SearchByItemCode";
-            SearchByItemCode.Size = new Size(143, 25);
+            SearchByItemCode.Size = new Size(134, 23);
             SearchByItemCode.TabIndex = 14;
             SearchByItemCode.Text = "Search By Code";
             // 
             // ItemSearchTextBox
             // 
-            ItemSearchTextBox.Location = new Point(1006, 144);
+            ItemSearchTextBox.Location = new Point(1006, 146);
             ItemSearchTextBox.Name = "ItemSearchTextBox";
-            ItemSearchTextBox.Size = new Size(310, 32);
+            ItemSearchTextBox.Size = new Size(310, 30);
             ItemSearchTextBox.TabIndex = 13;
             ItemSearchTextBox.KeyUp += ItemSearchTextBox_KeyUp;
             // 
@@ -163,7 +190,7 @@
             ItemIDComboBox.FormattingEnabled = true;
             ItemIDComboBox.Location = new Point(140, 24);
             ItemIDComboBox.Name = "ItemIDComboBox";
-            ItemIDComboBox.Size = new Size(342, 33);
+            ItemIDComboBox.Size = new Size(342, 31);
             ItemIDComboBox.TabIndex = 11;
             ItemIDComboBox.SelectedIndexChanged += ItemIDComboBox_SelectedIndexChanged;
             // 
@@ -172,7 +199,7 @@
             ItemIdLabel.AutoSize = true;
             ItemIdLabel.Location = new Point(43, 24);
             ItemIdLabel.Name = "ItemIdLabel";
-            ItemIdLabel.Size = new Size(72, 25);
+            ItemIdLabel.Size = new Size(70, 23);
             ItemIdLabel.TabIndex = 10;
             ItemIdLabel.Text = "Item ID";
             // 
@@ -182,7 +209,7 @@
             UnitComboBox.Items.AddRange(new object[] { "Kilogram (kg)", "Piece" });
             UnitComboBox.Location = new Point(633, 75);
             UnitComboBox.Name = "UnitComboBox";
-            UnitComboBox.Size = new Size(148, 33);
+            UnitComboBox.Size = new Size(148, 31);
             UnitComboBox.TabIndex = 9;
             // 
             // ItemUnitLabel
@@ -190,7 +217,7 @@
             ItemUnitLabel.AutoSize = true;
             ItemUnitLabel.Location = new Point(515, 78);
             ItemUnitLabel.Name = "ItemUnitLabel";
-            ItemUnitLabel.Size = new Size(47, 25);
+            ItemUnitLabel.Size = new Size(44, 23);
             ItemUnitLabel.TabIndex = 8;
             ItemUnitLabel.Text = "Unit";
             // 
@@ -209,7 +236,7 @@
             ItemQuantityLabel.AutoSize = true;
             ItemQuantityLabel.Location = new Point(515, 28);
             ItemQuantityLabel.Name = "ItemQuantityLabel";
-            ItemQuantityLabel.Size = new Size(84, 25);
+            ItemQuantityLabel.Size = new Size(80, 23);
             ItemQuantityLabel.TabIndex = 6;
             ItemQuantityLabel.Text = "Quantity";
             // 
@@ -218,7 +245,7 @@
             ItemCodeLabel.AutoSize = true;
             ItemCodeLabel.Location = new Point(43, 75);
             ItemCodeLabel.Name = "ItemCodeLabel";
-            ItemCodeLabel.Size = new Size(56, 25);
+            ItemCodeLabel.Size = new Size(51, 23);
             ItemCodeLabel.TabIndex = 5;
             ItemCodeLabel.Text = "Code";
             // 
@@ -227,7 +254,7 @@
             ItemNameLabel.AutoSize = true;
             ItemNameLabel.Location = new Point(43, 133);
             ItemNameLabel.Name = "ItemNameLabel";
-            ItemNameLabel.Size = new Size(62, 25);
+            ItemNameLabel.Size = new Size(57, 23);
             ItemNameLabel.TabIndex = 4;
             ItemNameLabel.Text = "Name";
             // 
@@ -235,21 +262,21 @@
             // 
             ItemQuantityTextBox.Location = new Point(631, 25);
             ItemQuantityTextBox.Name = "ItemQuantityTextBox";
-            ItemQuantityTextBox.Size = new Size(310, 32);
+            ItemQuantityTextBox.Size = new Size(310, 30);
             ItemQuantityTextBox.TabIndex = 3;
             // 
             // ItemCodeTextBox
             // 
             ItemCodeTextBox.Location = new Point(140, 75);
             ItemCodeTextBox.Name = "ItemCodeTextBox";
-            ItemCodeTextBox.Size = new Size(342, 32);
+            ItemCodeTextBox.Size = new Size(342, 30);
             ItemCodeTextBox.TabIndex = 2;
             // 
             // ItemNameTextBox
             // 
             ItemNameTextBox.Location = new Point(140, 133);
             ItemNameTextBox.Name = "ItemNameTextBox";
-            ItemNameTextBox.Size = new Size(342, 32);
+            ItemNameTextBox.Size = new Size(342, 30);
             ItemNameTextBox.TabIndex = 1;
             // 
             // ItemsGridView
@@ -263,7 +290,7 @@
             ItemsGridView.BackgroundColor = Color.White;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.Teal;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.Teal;
@@ -272,7 +299,7 @@
             ItemsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
             dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = Color.Teal;
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
@@ -284,7 +311,7 @@
             ItemsGridView.Name = "ItemsGridView";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = Color.Teal;
             dataGridViewCellStyle4.SelectionForeColor = Color.White;
@@ -333,7 +360,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(1113, 93);
             label2.Name = "label2";
-            label2.Size = new Size(117, 20);
+            label2.Size = new Size(123, 20);
             label2.TabIndex = 30;
             label2.Text = "Search By Name";
             // 
@@ -369,7 +396,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(43, 19);
             label3.Name = "label3";
-            label3.Size = new Size(101, 20);
+            label3.Size = new Size(107, 20);
             label3.TabIndex = 26;
             label3.Text = "Warehouse ID";
             // 
@@ -388,7 +415,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(525, 23);
             label5.Name = "label5";
-            label5.Size = new Size(68, 20);
+            label5.Size = new Size(71, 20);
             label5.TabIndex = 22;
             label5.Text = "Manager";
             // 
@@ -397,7 +424,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(43, 70);
             label6.Name = "label6";
-            label6.Size = new Size(49, 20);
+            label6.Size = new Size(51, 20);
             label6.TabIndex = 21;
             label6.Text = "Name";
             // 
@@ -406,7 +433,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(43, 128);
             label7.Name = "label7";
-            label7.Size = new Size(62, 20);
+            label7.Size = new Size(66, 20);
             label7.TabIndex = 20;
             label7.Text = "Address";
             // 
@@ -442,7 +469,7 @@
             WarehousesGridview.BackgroundColor = Color.White;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.Teal;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dataGridViewCellStyle6.ForeColor = Color.White;
             dataGridViewCellStyle6.SelectionBackColor = Color.White;
             dataGridViewCellStyle6.SelectionForeColor = Color.Teal;
@@ -451,7 +478,7 @@
             WarehousesGridview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dataGridViewCellStyle7.ForeColor = Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = Color.Teal;
             dataGridViewCellStyle7.SelectionForeColor = Color.White;
@@ -463,7 +490,7 @@
             WarehousesGridview.Name = "WarehousesGridview";
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             dataGridViewCellStyle8.ForeColor = Color.Black;
             dataGridViewCellStyle8.SelectionBackColor = Color.Teal;
             dataGridViewCellStyle8.SelectionForeColor = Color.White;
@@ -473,15 +500,238 @@
             WarehousesGridview.Size = new Size(1352, 323);
             WarehousesGridview.TabIndex = 16;
             // 
-            // tabPage3
+            // Suppliers
             // 
-            tabPage3.Location = new Point(4, 84);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1358, 541);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            Suppliers.Controls.Add(SupplierWebsiteTextBox);
+            Suppliers.Controls.Add(SupplierEmailTextBox);
+            Suppliers.Controls.Add(label14);
+            Suppliers.Controls.Add(label13);
+            Suppliers.Controls.Add(SupplierMobileTextBox);
+            Suppliers.Controls.Add(AddSupplier);
+            Suppliers.Controls.Add(label4);
+            Suppliers.Controls.Add(SupplierSearchNameTextBox);
+            Suppliers.Controls.Add(DeleteSupplier);
+            Suppliers.Controls.Add(SupplierIdComboBox);
+            Suppliers.Controls.Add(label8);
+            Suppliers.Controls.Add(label9);
+            Suppliers.Controls.Add(EditSupplier);
+            Suppliers.Controls.Add(label10);
+            Suppliers.Controls.Add(label11);
+            Suppliers.Controls.Add(label12);
+            Suppliers.Controls.Add(SupplierFaxTextBox);
+            Suppliers.Controls.Add(SupplierNameTextBox);
+            Suppliers.Controls.Add(SupplierPhoneTextBox);
+            Suppliers.Controls.Add(SupplierGridView);
+            Suppliers.Location = new Point(4, 84);
+            Suppliers.Name = "Suppliers";
+            Suppliers.Padding = new Padding(3);
+            Suppliers.Size = new Size(1358, 541);
+            Suppliers.TabIndex = 2;
+            Suppliers.Text = "Suppliers";
+            Suppliers.UseVisualStyleBackColor = true;
+            // 
+            // SupplierWebsiteTextBox
+            // 
+            SupplierWebsiteTextBox.Location = new Point(631, 112);
+            SupplierWebsiteTextBox.Name = "SupplierWebsiteTextBox";
+            SupplierWebsiteTextBox.Size = new Size(310, 27);
+            SupplierWebsiteTextBox.TabIndex = 36;
+            // 
+            // SupplierEmailTextBox
+            // 
+            SupplierEmailTextBox.Location = new Point(631, 66);
+            SupplierEmailTextBox.Name = "SupplierEmailTextBox";
+            SupplierEmailTextBox.Size = new Size(310, 27);
+            SupplierEmailTextBox.TabIndex = 35;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(515, 70);
+            label14.Name = "label14";
+            label14.Size = new Size(47, 20);
+            label14.TabIndex = 34;
+            label14.Text = "Email";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(515, 116);
+            label13.Name = "label13";
+            label13.Size = new Size(66, 20);
+            label13.TabIndex = 33;
+            label13.Text = "Website";
+            // 
+            // SupplierMobileTextBox
+            // 
+            SupplierMobileTextBox.Location = new Point(140, 156);
+            SupplierMobileTextBox.Name = "SupplierMobileTextBox";
+            SupplierMobileTextBox.Size = new Size(342, 27);
+            SupplierMobileTextBox.TabIndex = 32;
+            // 
+            // AddSupplier
+            // 
+            AddSupplier.Location = new Point(1006, 8);
+            AddSupplier.Name = "AddSupplier";
+            AddSupplier.Size = new Size(310, 55);
+            AddSupplier.TabIndex = 31;
+            AddSupplier.Text = "Add Supplier";
+            AddSupplier.UseVisualStyleBackColor = true;
+            AddSupplier.Click += AddSupplier_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(1103, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(123, 20);
+            label4.TabIndex = 30;
+            label4.Text = "Search By Name";
+            // 
+            // SupplierSearchNameTextBox
+            // 
+            SupplierSearchNameTextBox.Location = new Point(1006, 116);
+            SupplierSearchNameTextBox.Name = "SupplierSearchNameTextBox";
+            SupplierSearchNameTextBox.Size = new Size(310, 27);
+            SupplierSearchNameTextBox.TabIndex = 29;
+            SupplierSearchNameTextBox.KeyUp += SupplierSearchNameTextBox_KeyUp;
+            // 
+            // DeleteSupplier
+            // 
+            DeleteSupplier.Location = new Point(631, 154);
+            DeleteSupplier.Name = "DeleteSupplier";
+            DeleteSupplier.Size = new Size(150, 43);
+            DeleteSupplier.TabIndex = 28;
+            DeleteSupplier.Text = "Delete Supplier";
+            DeleteSupplier.UseVisualStyleBackColor = true;
+            DeleteSupplier.Click += DeleteSupplier_Click;
+            // 
+            // SupplierIdComboBox
+            // 
+            SupplierIdComboBox.FormattingEnabled = true;
+            SupplierIdComboBox.Location = new Point(140, 19);
+            SupplierIdComboBox.Name = "SupplierIdComboBox";
+            SupplierIdComboBox.Size = new Size(342, 28);
+            SupplierIdComboBox.TabIndex = 27;
+            SupplierIdComboBox.SelectedIndexChanged += SupplierIdComboBox_SelectedIndexChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(43, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(86, 20);
+            label8.TabIndex = 26;
+            label8.Text = "Supplier ID";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(43, 156);
+            label9.Name = "label9";
+            label9.Size = new Size(57, 20);
+            label9.TabIndex = 24;
+            label9.Text = "Mobile";
+            // 
+            // EditSupplier
+            // 
+            EditSupplier.Location = new Point(791, 154);
+            EditSupplier.Name = "EditSupplier";
+            EditSupplier.Size = new Size(150, 43);
+            EditSupplier.TabIndex = 23;
+            EditSupplier.Text = "Edit Supplier";
+            EditSupplier.UseVisualStyleBackColor = true;
+            EditSupplier.Click += EditSupplier_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(515, 23);
+            label10.Name = "label10";
+            label10.Size = new Size(33, 20);
+            label10.TabIndex = 22;
+            label10.Text = "Fax";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(43, 66);
+            label11.Name = "label11";
+            label11.Size = new Size(51, 20);
+            label11.TabIndex = 21;
+            label11.Text = "Name";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(43, 112);
+            label12.Name = "label12";
+            label12.Size = new Size(53, 20);
+            label12.TabIndex = 20;
+            label12.Text = "Phone";
+            // 
+            // SupplierFaxTextBox
+            // 
+            SupplierFaxTextBox.Location = new Point(631, 20);
+            SupplierFaxTextBox.Name = "SupplierFaxTextBox";
+            SupplierFaxTextBox.Size = new Size(310, 27);
+            SupplierFaxTextBox.TabIndex = 19;
+            // 
+            // SupplierNameTextBox
+            // 
+            SupplierNameTextBox.Location = new Point(140, 63);
+            SupplierNameTextBox.Name = "SupplierNameTextBox";
+            SupplierNameTextBox.Size = new Size(342, 27);
+            SupplierNameTextBox.TabIndex = 18;
+            // 
+            // SupplierPhoneTextBox
+            // 
+            SupplierPhoneTextBox.Location = new Point(140, 109);
+            SupplierPhoneTextBox.Name = "SupplierPhoneTextBox";
+            SupplierPhoneTextBox.Size = new Size(342, 27);
+            SupplierPhoneTextBox.TabIndex = 17;
+            // 
+            // SupplierGridView
+            // 
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.ForeColor = Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = Color.DarkCyan;
+            SupplierGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            SupplierGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SupplierGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            SupplierGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.Teal;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            SupplierGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            SupplierGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.White;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            SupplierGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            SupplierGridView.Dock = DockStyle.Bottom;
+            SupplierGridView.EnableHeadersVisualStyles = false;
+            SupplierGridView.Location = new Point(3, 215);
+            SupplierGridView.Name = "SupplierGridView";
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle12.SelectionForeColor = Color.White;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            SupplierGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            SupplierGridView.RowHeadersWidth = 51;
+            SupplierGridView.Size = new Size(1352, 323);
+            SupplierGridView.TabIndex = 16;
             // 
             // panel1
             // 
@@ -496,14 +746,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(444, 23);
+            label1.Location = new Point(472, 24);
             label1.Name = "label1";
-            label1.Size = new Size(382, 69);
+            label1.Size = new Size(428, 67);
             label1.TabIndex = 0;
-            label1.Text = "My Warehouse";
+            label1.Text = "My WAREHOUSE";
             // 
             // Form1
             // 
@@ -525,6 +774,9 @@
             Warehouse.ResumeLayout(false);
             Warehouse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)WarehousesGridview).EndInit();
+            Suppliers.ResumeLayout(false);
+            Suppliers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SupplierGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -535,7 +787,7 @@
         private TabControl Tabs;
         private TabPage Items;
         private TabPage Warehouse;
-        private TabPage tabPage3;
+        private TabPage Suppliers;
         private DataGridView ItemsGridView;
         private Button EditItem;
         private Label ItemQuantityLabel;
@@ -568,5 +820,27 @@
         private TextBox WarehouseNameTextBox;
         private TextBox WarehouseAddressTextBox;
         private DataGridView WarehousesGridview;
+        private Button AddSupplier;
+        private Label label4;
+        private TextBox SupplierSearchNameTextBox;
+        private Button DeleteSupplier;
+        private ComboBox SupplierIdComboBox;
+        private Label label8;
+        private ComboBox comboBox2;
+        private Label label9;
+        private Button EditSupplier;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private TextBox SupplierFaxTextBox;
+        private TextBox textBox3;
+        private TextBox SupplierPhoneTextBox;
+        private DataGridView SupplierGridView;
+        private TextBox SupplierWebsiteTextBox;
+        private TextBox SupplierEmailTextBox;
+        private Label label14;
+        private Label label13;
+        private TextBox SupplierMobileTextBox;
+        private TextBox SupplierNameTextBox;
     }
 }

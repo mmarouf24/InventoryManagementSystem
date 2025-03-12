@@ -24,7 +24,7 @@ namespace InventoryManagementSystem.Tables
         public string Name { get; set; }
         [Required]
         [MaxLength(255)]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Required]
         [MaxLength(100)]

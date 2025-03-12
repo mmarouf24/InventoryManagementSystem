@@ -90,6 +90,14 @@ namespace InventoryManagementSystem
                 .HasMany(e => e.SupplyOrders)
                 .WithOne(e => e.Warehouse)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Supplier>()
+            .HasIndex(s => s.Phone)
+            .IsUnique();
+            
+            modelBuilder.Entity<Customer>()
+            .HasIndex(s => s.Phone)
+            .IsUnique();
         }
 
     }
