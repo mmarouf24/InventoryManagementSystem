@@ -1,5 +1,6 @@
 using InventoryManagementSystem.Screens;
 using InventoryManagementSystem.Tables;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagementSystem
 {
@@ -59,7 +60,20 @@ namespace InventoryManagementSystem
             LoadCustomersData();
             CustomerIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-
+            //Supply Order Date
+            foreach (var supplyOrder in _Context.SupplyOrders.ToList())
+            {
+                SupplyOrderIdComboBox.Items.Add(supplyOrder.SupplyOrderID);
+                SupplyOrdersWaresComboBox.Items.Add(supplyOrder.Warehouse.Name);
+                SupplyOrderSuppliersComboBox.Items.Add(supplyOrder.Supplier.Name);
+            }
+            if (SupplyOrderIdComboBox.Items.Count > 0)
+                SupplyOrderIdComboBox.SelectedIndex = 0;
+            ConfigSupplyOrderTextBoxes();
+            LoadSupplyOrdersData();
+            SupplyOrderIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            SupplyOrdersWaresComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            SupplyOrderSuppliersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
@@ -521,6 +535,210 @@ namespace InventoryManagementSystem
 
         #endregion
         //Customer End
+
+
+
+        //Supply Order Start
+        #region Supply_Order
+        private void ConfigSupplyOrderTextBoxes()
+        {
+            var item = _Context.SupplyOrders.Find(SupplyOrderIdComboBox.SelectedItem);
+            if (item != null)
+            {
+                SupplyOrdersWaresComboBox.SelectedItem = item.Warehouse.Name;
+                SupplyOrderSuppliersComboBox.SelectedItem = item.Supplier.Name;
+                SupplyOrderNumberTextBox.Text = item.OrderNumber;
+                SupplyOrderDate.Value = item.OrderDate;
+
+            }
+        }
+        private void LoadSupplyOrdersData()
+        {
+            SupplyOrderGridView.DataSource = _Context.SupplyOrders
+                                          .Select(i => new
+                                          {
+                                              i.SupplyOrderID,
+                                              WarehouseName = i.Warehouse != null ? i.Warehouse.Name : "N/A",
+                                              SupplierName = i.Supplier != null ? i.Supplier.Name : "N/A",
+                                              i.OrderNumber,
+                                              i.OrderDate,
+                                          })
+                                        .ToList();
+
+            if (SupplyOrderGridView.Rows.Count > 0)
+            {
+                SupplyOrderGridView.Rows[0].Selected = true;
+                LoadSupplyOrderItems(Convert.ToInt32(SupplyOrderGridView.Rows[0].Cells["SupplyOrderID"].Value));
+            }
+
+        }
+
+        private void SupplyOrderGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int orderId = Convert.ToInt32(SupplyOrderGridView.Rows[e.RowIndex].Cells["SupplyOrderID"].Value);
+            LoadSupplyOrderItems(orderId);
+
+        }
+        private void LoadSupplyOrderItems(int i)
+        {
+            if (i >= 0)
+            {
+
+                SupplyOrderItemsGridView.DataSource = _Context.SupplyOrderDetails
+                                         .Where(d => d.SupplyOrderID == i)
+                                         .Select(i => new
+                                         {
+                                             i.Item.Name,
+                                             i.Quantity,
+                                             i.ProductionDate,
+                                             i.ExpirationPeriod
+                                         })
+                                          .ToList();
+
+            }
+        }
+
+        private void SupplyOrderIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SupplyOrderIdComboBox.SelectedIndex >= 0)
+            {
+                LoadSupplyOrderItems(Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem));
+            }
+            ConfigSupplyOrderTextBoxes();
+        }
+
+        private void EditDeleteSupplyOrderItem_Click(object sender, EventArgs e)
+        {
+            if (SupplyOrderItemsGridView.Rows.Count > 0)
+            {
+                EditSupplyOederItem editForm = new EditSupplyOederItem(Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem));
+                editForm.ShowDialog();
+                ConfigSupplyOrderTextBoxes();
+                LoadSupplyOrdersData();
+
+            }
+            else
+            {
+                MessageBox.Show("No Items in this Order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void SupplyOrderAddItemToExistedOrder_Click(object sender, EventArgs e)
+        {
+            AddSupplyOrderItem editForm = new AddSupplyOrderItem(Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem));
+            editForm.ShowDialog();
+            ConfigSupplyOrderTextBoxes();
+            LoadSupplyOrdersData();
+        }
+
+        private void EditSupplyOrder_Click(object sender, EventArgs e)
+        {
+            string ordernumber = SupplyOrderNumberTextBox.Text.Trim();
+            DateTime orderDate = SupplyOrderDate.Value;
+
+            string warehouse = SupplyOrdersWaresComboBox.SelectedItem.ToString();
+            string supplier = SupplyOrderSuppliersComboBox.SelectedItem.ToString();
+
+            if (SupplyOrderIdComboBox.Items.Count > 0)
+            {
+                bool isCodeExists = _Context.SupplyOrders.Any(i => i.OrderNumber == ordernumber && i.SupplyOrderID != int.Parse(SupplyOrderIdComboBox.SelectedItem.ToString()));
+
+                if (isCodeExists)
+                {
+                    MessageBox.Show("Editing Failed!, The Order Number you entered is already existed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var ExistedOrder = _Context.SupplyOrders.Find(SupplyOrderIdComboBox.SelectedItem);
+
+                var warehouseId = _Context.Warehouses.Where(i => i.Name == warehouse).FirstOrDefault();
+                var supplierId = _Context.Suppliers.Where(i => i.Name == supplier).FirstOrDefault();
+
+                ExistedOrder.WarehouseID = warehouseId.WarehouseID;
+                ExistedOrder.SupplierID = supplierId.SupplierID;
+                ExistedOrder.OrderNumber = ordernumber;
+                ExistedOrder.OrderDate = orderDate;
+                _Context.SaveChanges();
+                MessageBox.Show("Successfully Edited Supply Order !", "Success", MessageBoxButtons.OK);
+                LoadSupplyOrdersData();
+            }
+            else
+                MessageBox.Show("No Supply Orders To Edit!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void DeleteSupplyOrder_Click(object sender, EventArgs e)
+        {
+            if (SupplyOrderIdComboBox.Items.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this item?",
+                                                       "Delete Confirmation",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    var orderToDelete = _Context.SupplyOrders.Find(SupplyOrderIdComboBox.SelectedItem);
+                    var orderItemsToDelete = _Context.SupplyOrderDetails.Where(d => d.SupplyOrderID == Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem)).ToList();
+
+                    _Context.SupplyOrderDetails.RemoveRange(orderItemsToDelete);
+                    _Context.SupplyOrders.Remove(orderToDelete);
+                    _Context.SaveChanges();
+                    MessageBox.Show("Supply Order deleted successfully!", "Success", MessageBoxButtons.OK);
+                    SupplyOrderIdComboBox.Items.Remove(SupplyOrderIdComboBox.SelectedItem);
+                    if (SupplyOrderIdComboBox.Items.Count > 0)
+                        SupplyOrderIdComboBox.SelectedIndex = 0;
+                    ConfigSupplyOrderTextBoxes();
+                    LoadSupplyOrdersData();
+                }
+                else
+                {
+
+                    MessageBox.Show("Operation canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("No Supply Orders To Delete!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AddSupplyOrder_Click(object sender, EventArgs e)
+        {
+            AddNewSupplyOrder addForm = new AddNewSupplyOrder();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                SupplyOrderIdComboBox.Items.Add(_Context.SupplyOrders.Order().Last().SupplierID);
+                LoadSupplyOrdersData();
+            }
+        }
+
+        private void SupplyOrderSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string Term = SupplyOrderSearchTextBox.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(Term))
+            {
+                LoadSupplyOrdersData();
+                return;
+            }
+
+            var ExistedOrders = _Context.SupplyOrders
+                            .Where(i => i.OrderNumber.Contains(Term))
+                            .Select(i => new {
+                                i.SupplyOrderID,
+                                WarehouseName = i.Warehouse != null ? i.Warehouse.Name : "N/A",
+                                SupplierName = i.Supplier != null ? i.Supplier.Name : "N/A",
+                                i.OrderNumber,
+                                i.OrderDate,
+                            })
+                            .ToList();
+            if (ExistedOrders.Any())
+                SupplyOrderGridView.DataSource = ExistedOrders;
+        }
+
+
+        #endregion
+        //Supply Order End
 
 
     }

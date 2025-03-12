@@ -145,3 +145,8 @@ D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewWarehouse.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewSupplier.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewCustomer.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\bin\Debug\net8.0-windows\Castle.Core.dll
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.EditSupplyOederItem.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddSupplyOrderItem.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewSupplyOrder.resources

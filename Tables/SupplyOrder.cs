@@ -12,7 +12,7 @@ namespace InventoryManagementSystem.Tables
     {
         public SupplyOrder()
         {
-            SupplyOrderDetails = new HashSet<SupplyOrderDetail>();
+            SupplyOrderDetails = new List<SupplyOrderDetail>();
         }
 
         public int SupplyOrderID { get; set; }
@@ -30,9 +30,9 @@ namespace InventoryManagementSystem.Tables
 
         public virtual Supplier Supplier { get; set; }
 
+        public virtual Warehouse Warehouse { get; set; }
         public virtual ICollection<SupplyOrderDetail> SupplyOrderDetails { get; set; }
 
-        public virtual Warehouse Warehouse { get; set; }
 
     }
 }

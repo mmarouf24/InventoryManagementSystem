@@ -44,6 +44,14 @@
             DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -119,6 +127,27 @@
             CustomerNameTextBox = new TextBox();
             CustomerPhoneTextBox = new TextBox();
             CustomersGridView = new DataGridView();
+            SupplyOrders = new TabPage();
+            SupplyOrderAddItemToExistedOrder = new Button();
+            EditDeleteSupplyOrderItem = new Button();
+            label29 = new Label();
+            SupplyOrderItemsGridView = new DataGridView();
+            SupplyOrderSuppliersComboBox = new ComboBox();
+            SupplyOrdersWaresComboBox = new ComboBox();
+            SupplyOrderDate = new DateTimePicker();
+            AddSupplyOrder = new Button();
+            label23 = new Label();
+            SupplyOrderSearchTextBox = new TextBox();
+            DeleteSupplyOrder = new Button();
+            SupplyOrderIdComboBox = new ComboBox();
+            label24 = new Label();
+            label25 = new Label();
+            EditSupplyOrder = new Button();
+            label26 = new Label();
+            label27 = new Label();
+            label28 = new Label();
+            SupplyOrderNumberTextBox = new TextBox();
+            SupplyOrderGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -130,6 +159,9 @@
             ((System.ComponentModel.ISupportInitialize)SupplierGridView).BeginInit();
             Customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CustomersGridView).BeginInit();
+            SupplyOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SupplyOrderItemsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SupplyOrderGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,6 +171,7 @@
             Tabs.Controls.Add(Warehouse);
             Tabs.Controls.Add(Suppliers);
             Tabs.Controls.Add(Customers);
+            Tabs.Controls.Add(SupplyOrders);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
@@ -994,6 +1027,279 @@
             CustomersGridView.Size = new Size(1352, 323);
             CustomersGridView.TabIndex = 37;
             // 
+            // SupplyOrders
+            // 
+            SupplyOrders.Controls.Add(SupplyOrderAddItemToExistedOrder);
+            SupplyOrders.Controls.Add(EditDeleteSupplyOrderItem);
+            SupplyOrders.Controls.Add(label29);
+            SupplyOrders.Controls.Add(SupplyOrderItemsGridView);
+            SupplyOrders.Controls.Add(SupplyOrderSuppliersComboBox);
+            SupplyOrders.Controls.Add(SupplyOrdersWaresComboBox);
+            SupplyOrders.Controls.Add(SupplyOrderDate);
+            SupplyOrders.Controls.Add(AddSupplyOrder);
+            SupplyOrders.Controls.Add(label23);
+            SupplyOrders.Controls.Add(SupplyOrderSearchTextBox);
+            SupplyOrders.Controls.Add(DeleteSupplyOrder);
+            SupplyOrders.Controls.Add(SupplyOrderIdComboBox);
+            SupplyOrders.Controls.Add(label24);
+            SupplyOrders.Controls.Add(label25);
+            SupplyOrders.Controls.Add(EditSupplyOrder);
+            SupplyOrders.Controls.Add(label26);
+            SupplyOrders.Controls.Add(label27);
+            SupplyOrders.Controls.Add(label28);
+            SupplyOrders.Controls.Add(SupplyOrderNumberTextBox);
+            SupplyOrders.Controls.Add(SupplyOrderGridView);
+            SupplyOrders.Location = new Point(4, 84);
+            SupplyOrders.Name = "SupplyOrders";
+            SupplyOrders.Padding = new Padding(3);
+            SupplyOrders.Size = new Size(1358, 541);
+            SupplyOrders.TabIndex = 4;
+            SupplyOrders.Text = "Supply Orders";
+            SupplyOrders.UseVisualStyleBackColor = true;
+            // 
+            // SupplyOrderAddItemToExistedOrder
+            // 
+            SupplyOrderAddItemToExistedOrder.Location = new Point(334, 162);
+            SupplyOrderAddItemToExistedOrder.Name = "SupplyOrderAddItemToExistedOrder";
+            SupplyOrderAddItemToExistedOrder.Size = new Size(148, 47);
+            SupplyOrderAddItemToExistedOrder.TabIndex = 38;
+            SupplyOrderAddItemToExistedOrder.Text = "Add Item";
+            SupplyOrderAddItemToExistedOrder.UseVisualStyleBackColor = true;
+            SupplyOrderAddItemToExistedOrder.Click += SupplyOrderAddItemToExistedOrder_Click;
+            // 
+            // EditDeleteSupplyOrderItem
+            // 
+            EditDeleteSupplyOrderItem.Location = new Point(169, 162);
+            EditDeleteSupplyOrderItem.Name = "EditDeleteSupplyOrderItem";
+            EditDeleteSupplyOrderItem.Size = new Size(148, 47);
+            EditDeleteSupplyOrderItem.TabIndex = 37;
+            EditDeleteSupplyOrderItem.Text = "Edit or Delete";
+            EditDeleteSupplyOrderItem.UseVisualStyleBackColor = true;
+            EditDeleteSupplyOrderItem.Click += EditDeleteSupplyOrderItem_Click;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(43, 175);
+            label29.Name = "label29";
+            label29.Size = new Size(49, 20);
+            label29.TabIndex = 36;
+            label29.Text = "Items";
+            // 
+            // SupplyOrderItemsGridView
+            // 
+            dataGridViewCellStyle17.BackColor = Color.White;
+            dataGridViewCellStyle17.ForeColor = Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = Color.DarkCyan;
+            SupplyOrderItemsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            SupplyOrderItemsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SupplyOrderItemsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            SupplyOrderItemsGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.Teal;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            SupplyOrderItemsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            SupplyOrderItemsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = Color.White;
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle19.ForeColor = Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle19.SelectionForeColor = Color.White;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.False;
+            SupplyOrderItemsGridView.DefaultCellStyle = dataGridViewCellStyle19;
+            SupplyOrderItemsGridView.EnableHeadersVisualStyles = false;
+            SupplyOrderItemsGridView.Location = new Point(691, 215);
+            SupplyOrderItemsGridView.Name = "SupplyOrderItemsGridView";
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = Color.White;
+            dataGridViewCellStyle20.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle20.ForeColor = Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle20.SelectionForeColor = Color.White;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
+            SupplyOrderItemsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            SupplyOrderItemsGridView.RowHeadersWidth = 51;
+            SupplyOrderItemsGridView.Size = new Size(664, 323);
+            SupplyOrderItemsGridView.TabIndex = 35;
+            // 
+            // SupplyOrderSuppliersComboBox
+            // 
+            SupplyOrderSuppliersComboBox.FormattingEnabled = true;
+            SupplyOrderSuppliersComboBox.Location = new Point(169, 120);
+            SupplyOrderSuppliersComboBox.Name = "SupplyOrderSuppliersComboBox";
+            SupplyOrderSuppliersComboBox.Size = new Size(313, 28);
+            SupplyOrderSuppliersComboBox.TabIndex = 34;
+            // 
+            // SupplyOrdersWaresComboBox
+            // 
+            SupplyOrdersWaresComboBox.FormattingEnabled = true;
+            SupplyOrdersWaresComboBox.Location = new Point(169, 73);
+            SupplyOrdersWaresComboBox.Name = "SupplyOrdersWaresComboBox";
+            SupplyOrdersWaresComboBox.Size = new Size(313, 28);
+            SupplyOrdersWaresComboBox.TabIndex = 33;
+            // 
+            // SupplyOrderDate
+            // 
+            SupplyOrderDate.Location = new Point(631, 66);
+            SupplyOrderDate.Name = "SupplyOrderDate";
+            SupplyOrderDate.Size = new Size(310, 27);
+            SupplyOrderDate.TabIndex = 32;
+            // 
+            // AddSupplyOrder
+            // 
+            AddSupplyOrder.Location = new Point(1006, 8);
+            AddSupplyOrder.Name = "AddSupplyOrder";
+            AddSupplyOrder.Size = new Size(310, 55);
+            AddSupplyOrder.TabIndex = 31;
+            AddSupplyOrder.Text = "Add Order";
+            AddSupplyOrder.UseVisualStyleBackColor = true;
+            AddSupplyOrder.Click += AddSupplyOrder_Click;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(1080, 95);
+            label23.Name = "label23";
+            label23.Size = new Size(183, 20);
+            label23.TabIndex = 30;
+            label23.Text = "Search By Order Number";
+            // 
+            // SupplyOrderSearchTextBox
+            // 
+            SupplyOrderSearchTextBox.Location = new Point(1006, 141);
+            SupplyOrderSearchTextBox.Name = "SupplyOrderSearchTextBox";
+            SupplyOrderSearchTextBox.Size = new Size(310, 27);
+            SupplyOrderSearchTextBox.TabIndex = 29;
+            SupplyOrderSearchTextBox.TextChanged += SupplyOrderSearchTextBox_TextChanged;
+            // 
+            // DeleteSupplyOrder
+            // 
+            DeleteSupplyOrder.Location = new Point(631, 114);
+            DeleteSupplyOrder.Name = "DeleteSupplyOrder";
+            DeleteSupplyOrder.Size = new Size(150, 55);
+            DeleteSupplyOrder.TabIndex = 28;
+            DeleteSupplyOrder.Text = "Delete Order";
+            DeleteSupplyOrder.UseVisualStyleBackColor = true;
+            DeleteSupplyOrder.Click += DeleteSupplyOrder_Click;
+            // 
+            // SupplyOrderIdComboBox
+            // 
+            SupplyOrderIdComboBox.FormattingEnabled = true;
+            SupplyOrderIdComboBox.Location = new Point(169, 19);
+            SupplyOrderIdComboBox.Name = "SupplyOrderIdComboBox";
+            SupplyOrderIdComboBox.Size = new Size(313, 28);
+            SupplyOrderIdComboBox.TabIndex = 27;
+            SupplyOrderIdComboBox.SelectedIndexChanged += SupplyOrderIdComboBox_SelectedIndexChanged;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(43, 19);
+            label24.Name = "label24";
+            label24.Size = new Size(69, 20);
+            label24.TabIndex = 26;
+            label24.Text = "Order ID";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(515, 73);
+            label25.Name = "label25";
+            label25.Size = new Size(86, 20);
+            label25.TabIndex = 24;
+            label25.Text = "Order Date";
+            // 
+            // EditSupplyOrder
+            // 
+            EditSupplyOrder.Location = new Point(791, 114);
+            EditSupplyOrder.Name = "EditSupplyOrder";
+            EditSupplyOrder.Size = new Size(150, 55);
+            EditSupplyOrder.TabIndex = 23;
+            EditSupplyOrder.Text = "Edit Order";
+            EditSupplyOrder.UseVisualStyleBackColor = true;
+            EditSupplyOrder.Click += EditSupplyOrder_Click;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(515, 23);
+            label26.Name = "label26";
+            label26.Size = new Size(111, 20);
+            label26.TabIndex = 22;
+            label26.Text = "Order Number";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(43, 70);
+            label27.Name = "label27";
+            label27.Size = new Size(87, 20);
+            label27.TabIndex = 21;
+            label27.Text = "Warehouse";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(43, 128);
+            label28.Name = "label28";
+            label28.Size = new Size(66, 20);
+            label28.TabIndex = 20;
+            label28.Text = "Supplier";
+            // 
+            // SupplyOrderNumberTextBox
+            // 
+            SupplyOrderNumberTextBox.Location = new Point(631, 20);
+            SupplyOrderNumberTextBox.Name = "SupplyOrderNumberTextBox";
+            SupplyOrderNumberTextBox.Size = new Size(310, 27);
+            SupplyOrderNumberTextBox.TabIndex = 19;
+            // 
+            // SupplyOrderGridView
+            // 
+            dataGridViewCellStyle21.BackColor = Color.White;
+            dataGridViewCellStyle21.ForeColor = Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = Color.DarkCyan;
+            SupplyOrderGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            SupplyOrderGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SupplyOrderGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            SupplyOrderGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = Color.Teal;
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle22.ForeColor = Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = Color.White;
+            dataGridViewCellStyle22.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            SupplyOrderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            SupplyOrderGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = Color.White;
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle23.ForeColor = Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle23.SelectionForeColor = Color.White;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            SupplyOrderGridView.DefaultCellStyle = dataGridViewCellStyle23;
+            SupplyOrderGridView.EnableHeadersVisualStyles = false;
+            SupplyOrderGridView.Location = new Point(3, 215);
+            SupplyOrderGridView.Name = "SupplyOrderGridView";
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = Color.White;
+            dataGridViewCellStyle24.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle24.ForeColor = Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle24.SelectionForeColor = Color.White;
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
+            SupplyOrderGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            SupplyOrderGridView.RowHeadersWidth = 51;
+            SupplyOrderGridView.Size = new Size(671, 323);
+            SupplyOrderGridView.TabIndex = 16;
+            SupplyOrderGridView.CellClick += SupplyOrderGridView_CellClick;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Teal;
@@ -1041,6 +1347,10 @@
             Customers.ResumeLayout(false);
             Customers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)CustomersGridView).EndInit();
+            SupplyOrders.ResumeLayout(false);
+            SupplyOrders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SupplyOrderItemsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SupplyOrderGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -1126,5 +1436,26 @@
         private TextBox CustomerNameTextBox;
         private TextBox CustomerPhoneTextBox;
         private DataGridView CustomersGridView;
+        private TabPage SupplyOrders;
+        private Button AddSupplyOrder;
+        private Label label23;
+        private TextBox SupplyOrderSearchTextBox;
+        private Button DeleteSupplyOrder;
+        private ComboBox SupplyOrderIdComboBox;
+        private Label label24;
+        private Label label25;
+        private Button EditSupplyOrder;
+        private Label label26;
+        private Label label27;
+        private Label label28;
+        private TextBox SupplyOrderNumberTextBox;
+        private DataGridView SupplyOrderGridView;
+        private DateTimePicker SupplyOrderDate;
+        private ComboBox SupplyOrdersWaresComboBox;
+        private ComboBox SupplyOrderSuppliersComboBox;
+        private DataGridView SupplyOrderItemsGridView;
+        private Button EditDeleteSupplyOrderItem;
+        private Label label29;
+        private Button SupplyOrderAddItemToExistedOrder;
     }
 }

@@ -25,8 +25,8 @@ namespace InventoryManagementSystem.Tables
         public DateTime TransferDate { get; set; }
         public virtual ICollection<StockTransferDetail> StockTransferDetails { get; set; }
 
-        public virtual Warehouse Warehouse { get; set; }
+        public virtual Warehouse FromWarehouse { get; set; }
 
-        public virtual Warehouse Warehouse1 { get; set; }
+        public virtual Warehouse ToWarehouse { get; set; }
     }
 }
