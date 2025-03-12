@@ -3,60 +3,28 @@
   "WorkspaceRootPath": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\efmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:efmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\stocktransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\stocktransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\supplyorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\supplyorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\supplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\supplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\stocktransferdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\stocktransferdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\releaseorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\releaseorderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\releaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\releaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\tables\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:tables\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,188 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AddNewItem.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewItem.cs",
+              "RelativeToolTip": "Screens\\AddNewItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T19:14:19.468Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Supplier.cs",
-              "RelativeDocumentMoniker": "Tables\\Supplier.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Supplier.cs",
-              "RelativeToolTip": "Tables\\Supplier.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwCIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:01:56.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SupplyOrder.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\SupplyOrder.cs",
-              "RelativeDocumentMoniker": "Tables\\SupplyOrder.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\SupplyOrder.cs",
-              "RelativeToolTip": "Tables\\SupplyOrder.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:02:49.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SupplyOrderDetail.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\SupplyOrderDetail.cs",
-              "RelativeDocumentMoniker": "Tables\\SupplyOrderDetail.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\SupplyOrderDetail.cs",
-              "RelativeToolTip": "Tables\\SupplyOrderDetail.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:55:16.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Warehouse.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Warehouse.cs",
-              "RelativeDocumentMoniker": "Tables\\Warehouse.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Warehouse.cs",
-              "RelativeToolTip": "Tables\\Warehouse.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T13:56:42.384Z",
+              "WhenOpened": "2025-03-12T00:48:42.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EFModel.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\EFModel.cs",
-              "RelativeDocumentMoniker": "EFModel.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\EFModel.cs",
-              "RelativeToolTip": "EFModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Title": "AddNewItem.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewItem.cs [Design]",
+              "RelativeToolTip": "Screens\\AddNewItem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T15:15:17.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T00:48:33.295Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StockTransferDetail.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\StockTransferDetail.cs",
-              "RelativeDocumentMoniker": "Tables\\StockTransferDetail.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\StockTransferDetail.cs",
-              "RelativeToolTip": "Tables\\StockTransferDetail.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:54:42.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StockTransfer.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\StockTransfer.cs",
-              "RelativeDocumentMoniker": "Tables\\StockTransfer.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\StockTransfer.cs",
-              "RelativeToolTip": "Tables\\StockTransfer.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:54:18.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Stock.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Stock.cs",
-              "RelativeDocumentMoniker": "Tables\\Stock.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Stock.cs",
-              "RelativeToolTip": "Tables\\Stock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:53:52.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReleaseOrderDetail.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\ReleaseOrderDetail.cs",
-              "RelativeDocumentMoniker": "Tables\\ReleaseOrderDetail.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\ReleaseOrderDetail.cs",
-              "RelativeToolTip": "Tables\\ReleaseOrderDetail.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:53:05.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ReleaseOrder.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\ReleaseOrder.cs",
-              "RelativeDocumentMoniker": "Tables\\ReleaseOrder.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\ReleaseOrder.cs",
-              "RelativeToolTip": "Tables\\ReleaseOrder.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:52:19.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Item.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Item.cs",
-              "RelativeDocumentMoniker": "Tables\\Item.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Item.cs",
-              "RelativeToolTip": "Tables\\Item.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwB4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T13:58:02.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Customer.cs",
-              "RelativeDocumentMoniker": "Tables\\Customer.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Customer.cs",
-              "RelativeToolTip": "Tables\\Customer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T14:00:03.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:27:34.443Z",
+              "WhenOpened": "2025-03-11T23:20:39.228Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Item.cs",
+              "RelativeDocumentMoniker": "Tables\\Item.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Tables\\Item.cs",
+              "RelativeToolTip": "Tables\\Item.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T19:57:55.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAYwC4BAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T19:44:50.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T19:14:19.468Z",
+              "EditorCaption": ""
             }
           ]
         }
