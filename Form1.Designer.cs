@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -50,20 +54,36 @@
             ItemCodeTextBox = new TextBox();
             ItemNameTextBox = new TextBox();
             ItemsGridView = new DataGridView();
-            tabPage2 = new TabPage();
+            Warehouse = new TabPage();
+            AddWarehouse = new Button();
+            label2 = new Label();
+            WarehouseSearchTextBox = new TextBox();
+            DeleteWarehouse = new Button();
+            WarehouseIdComboBox = new ComboBox();
+            label3 = new Label();
+            EditWarehouse = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            WarehouseManagerTextBox = new TextBox();
+            WarehouseNameTextBox = new TextBox();
+            WarehouseAddressTextBox = new TextBox();
+            WarehousesGridview = new DataGridView();
             tabPage3 = new TabPage();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
             Items.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ItemsGridView).BeginInit();
+            Warehouse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)WarehousesGridview).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // Tabs
             // 
             Tabs.Controls.Add(Items);
-            Tabs.Controls.Add(tabPage2);
+            Tabs.Controls.Add(Warehouse);
             Tabs.Controls.Add(tabPage3);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.ItemSize = new Size(100, 80);
@@ -274,15 +294,184 @@
             ItemsGridView.Size = new Size(1350, 323);
             ItemsGridView.TabIndex = 0;
             // 
-            // tabPage2
+            // Warehouse
             // 
-            tabPage2.Location = new Point(4, 84);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1358, 541);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            Warehouse.Controls.Add(AddWarehouse);
+            Warehouse.Controls.Add(label2);
+            Warehouse.Controls.Add(WarehouseSearchTextBox);
+            Warehouse.Controls.Add(DeleteWarehouse);
+            Warehouse.Controls.Add(WarehouseIdComboBox);
+            Warehouse.Controls.Add(label3);
+            Warehouse.Controls.Add(EditWarehouse);
+            Warehouse.Controls.Add(label5);
+            Warehouse.Controls.Add(label6);
+            Warehouse.Controls.Add(label7);
+            Warehouse.Controls.Add(WarehouseManagerTextBox);
+            Warehouse.Controls.Add(WarehouseNameTextBox);
+            Warehouse.Controls.Add(WarehouseAddressTextBox);
+            Warehouse.Controls.Add(WarehousesGridview);
+            Warehouse.Location = new Point(4, 84);
+            Warehouse.Name = "Warehouse";
+            Warehouse.Padding = new Padding(3);
+            Warehouse.Size = new Size(1358, 541);
+            Warehouse.TabIndex = 1;
+            Warehouse.Text = "Warehouses";
+            Warehouse.UseVisualStyleBackColor = true;
+            // 
+            // AddWarehouse
+            // 
+            AddWarehouse.Location = new Point(1006, 8);
+            AddWarehouse.Name = "AddWarehouse";
+            AddWarehouse.Size = new Size(310, 55);
+            AddWarehouse.TabIndex = 31;
+            AddWarehouse.Text = "Add Warehouse";
+            AddWarehouse.UseVisualStyleBackColor = true;
+            AddWarehouse.Click += AddWarehouse_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(1113, 93);
+            label2.Name = "label2";
+            label2.Size = new Size(117, 20);
+            label2.TabIndex = 30;
+            label2.Text = "Search By Name";
+            // 
+            // WarehouseSearchTextBox
+            // 
+            WarehouseSearchTextBox.Location = new Point(1006, 128);
+            WarehouseSearchTextBox.Name = "WarehouseSearchTextBox";
+            WarehouseSearchTextBox.Size = new Size(310, 27);
+            WarehouseSearchTextBox.TabIndex = 29;
+            WarehouseSearchTextBox.KeyUp += WarehouseSearchTextBox_KeyUp;
+            // 
+            // DeleteWarehouse
+            // 
+            DeleteWarehouse.Location = new Point(631, 93);
+            DeleteWarehouse.Name = "DeleteWarehouse";
+            DeleteWarehouse.Size = new Size(150, 55);
+            DeleteWarehouse.TabIndex = 28;
+            DeleteWarehouse.Text = "Delete Warehouse";
+            DeleteWarehouse.UseVisualStyleBackColor = true;
+            DeleteWarehouse.Click += DeleteWarehouse_Click;
+            // 
+            // WarehouseIdComboBox
+            // 
+            WarehouseIdComboBox.FormattingEnabled = true;
+            WarehouseIdComboBox.Location = new Point(150, 15);
+            WarehouseIdComboBox.Name = "WarehouseIdComboBox";
+            WarehouseIdComboBox.Size = new Size(342, 28);
+            WarehouseIdComboBox.TabIndex = 27;
+            WarehouseIdComboBox.SelectedIndexChanged += WarehouseIdComboBox_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(43, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(101, 20);
+            label3.TabIndex = 26;
+            label3.Text = "Warehouse ID";
+            // 
+            // EditWarehouse
+            // 
+            EditWarehouse.Location = new Point(791, 93);
+            EditWarehouse.Name = "EditWarehouse";
+            EditWarehouse.Size = new Size(150, 55);
+            EditWarehouse.TabIndex = 23;
+            EditWarehouse.Text = "Edit Warehouse";
+            EditWarehouse.UseVisualStyleBackColor = true;
+            EditWarehouse.Click += EditWarehouse_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(525, 23);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 20);
+            label5.TabIndex = 22;
+            label5.Text = "Manager";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(43, 70);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 20);
+            label6.TabIndex = 21;
+            label6.Text = "Name";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(43, 128);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 20);
+            label7.TabIndex = 20;
+            label7.Text = "Address";
+            // 
+            // WarehouseManagerTextBox
+            // 
+            WarehouseManagerTextBox.Location = new Point(631, 20);
+            WarehouseManagerTextBox.Name = "WarehouseManagerTextBox";
+            WarehouseManagerTextBox.Size = new Size(310, 27);
+            WarehouseManagerTextBox.TabIndex = 19;
+            // 
+            // WarehouseNameTextBox
+            // 
+            WarehouseNameTextBox.Location = new Point(150, 70);
+            WarehouseNameTextBox.Name = "WarehouseNameTextBox";
+            WarehouseNameTextBox.Size = new Size(342, 27);
+            WarehouseNameTextBox.TabIndex = 18;
+            // 
+            // WarehouseAddressTextBox
+            // 
+            WarehouseAddressTextBox.Location = new Point(150, 128);
+            WarehouseAddressTextBox.Name = "WarehouseAddressTextBox";
+            WarehouseAddressTextBox.Size = new Size(342, 27);
+            WarehouseAddressTextBox.TabIndex = 17;
+            // 
+            // WarehousesGridview
+            // 
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkCyan;
+            WarehousesGridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            WarehousesGridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            WarehousesGridview.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            WarehousesGridview.BackgroundColor = Color.White;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.Teal;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            WarehousesGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            WarehousesGridview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle7.ForeColor = Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            WarehousesGridview.DefaultCellStyle = dataGridViewCellStyle7;
+            WarehousesGridview.Dock = DockStyle.Bottom;
+            WarehousesGridview.EnableHeadersVisualStyles = false;
+            WarehousesGridview.Location = new Point(3, 215);
+            WarehousesGridview.Name = "WarehousesGridview";
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            WarehousesGridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            WarehousesGridview.RowHeadersWidth = 51;
+            WarehousesGridview.Size = new Size(1352, 323);
+            WarehousesGridview.TabIndex = 16;
             // 
             // tabPage3
             // 
@@ -333,6 +522,9 @@
             Items.ResumeLayout(false);
             Items.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ItemsGridView).EndInit();
+            Warehouse.ResumeLayout(false);
+            Warehouse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)WarehousesGridview).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -342,7 +534,7 @@
 
         private TabControl Tabs;
         private TabPage Items;
-        private TabPage tabPage2;
+        private TabPage Warehouse;
         private TabPage tabPage3;
         private DataGridView ItemsGridView;
         private Button EditItem;
@@ -362,5 +554,19 @@
         private TextBox ItemSearchTextBox;
         private Label SearchByItemCode;
         private Button AddItem;
+        private Button AddWarehouse;
+        private Label label2;
+        private TextBox WarehouseSearchTextBox;
+        private Button DeleteWarehouse;
+        private ComboBox WarehouseIdComboBox;
+        private Label label3;
+        private Button EditWarehouse;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private TextBox WarehouseManagerTextBox;
+        private TextBox WarehouseNameTextBox;
+        private TextBox WarehouseAddressTextBox;
+        private DataGridView WarehousesGridview;
     }
 }

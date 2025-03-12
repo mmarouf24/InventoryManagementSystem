@@ -28,9 +28,9 @@ namespace InventoryManagementSystem
                 MessageBox.Show("Enter Data in all Fields !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                string name = ItemNameTextBox.Text;
-                string code = ItemCodeTextBox.Text;
-                int quantity = int.Parse(ItemQuantityTextBox.Text);
+                string name = ItemNameTextBox.Text.Trim();
+                string code = ItemCodeTextBox.Text.Trim();
+                int quantity = int.Parse(ItemQuantityTextBox.Text.Trim());
                 string unit = ItemUnitComboBox.SelectedItem.ToString();
 
                 var ifExistedItem = _Context.Items.FirstOrDefault(i => i.Code == code);

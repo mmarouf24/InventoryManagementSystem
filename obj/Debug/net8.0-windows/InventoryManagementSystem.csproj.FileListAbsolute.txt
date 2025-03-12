@@ -142,3 +142,4 @@ D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.genruntimeconfig.cache
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\ref\InventoryManagementSystem.dll
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.AddNewItem.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewWarehouse.resources
