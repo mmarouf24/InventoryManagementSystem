@@ -52,6 +52,14 @@
             DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -148,6 +156,27 @@
             label28 = new Label();
             SupplyOrderNumberTextBox = new TextBox();
             SupplyOrderGridView = new DataGridView();
+            ReleaseOrders = new TabPage();
+            ReleaseOrderAddItemToExistedOrder = new Button();
+            EditDeleteReleaseOrderItem = new Button();
+            label30 = new Label();
+            ReleaseOrderItemsGridView = new DataGridView();
+            ReleaseOrderCustomersComboBox = new ComboBox();
+            ReleaseOrdersWaresComboBox = new ComboBox();
+            ReleaseOrderDate = new DateTimePicker();
+            AddReleaseOrder = new Button();
+            label31 = new Label();
+            ReleaseOrderSearchTextBox = new TextBox();
+            DeleteReleaseOrder = new Button();
+            ReleaseOrderIdComboBox = new ComboBox();
+            label32 = new Label();
+            label33 = new Label();
+            EditReleaseOrder = new Button();
+            label34 = new Label();
+            label35 = new Label();
+            label36 = new Label();
+            ReleaseOrderNumberTextBox = new TextBox();
+            ReleaseOrderGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -162,6 +191,9 @@
             SupplyOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SupplyOrderItemsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SupplyOrderGridView).BeginInit();
+            ReleaseOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -172,6 +204,7 @@
             Tabs.Controls.Add(Suppliers);
             Tabs.Controls.Add(Customers);
             Tabs.Controls.Add(SupplyOrders);
+            Tabs.Controls.Add(ReleaseOrders);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
@@ -1300,6 +1333,278 @@
             SupplyOrderGridView.TabIndex = 16;
             SupplyOrderGridView.CellClick += SupplyOrderGridView_CellClick;
             // 
+            // ReleaseOrders
+            // 
+            ReleaseOrders.Controls.Add(ReleaseOrderAddItemToExistedOrder);
+            ReleaseOrders.Controls.Add(EditDeleteReleaseOrderItem);
+            ReleaseOrders.Controls.Add(label30);
+            ReleaseOrders.Controls.Add(ReleaseOrderItemsGridView);
+            ReleaseOrders.Controls.Add(ReleaseOrderCustomersComboBox);
+            ReleaseOrders.Controls.Add(ReleaseOrdersWaresComboBox);
+            ReleaseOrders.Controls.Add(ReleaseOrderDate);
+            ReleaseOrders.Controls.Add(AddReleaseOrder);
+            ReleaseOrders.Controls.Add(label31);
+            ReleaseOrders.Controls.Add(ReleaseOrderSearchTextBox);
+            ReleaseOrders.Controls.Add(DeleteReleaseOrder);
+            ReleaseOrders.Controls.Add(ReleaseOrderIdComboBox);
+            ReleaseOrders.Controls.Add(label32);
+            ReleaseOrders.Controls.Add(label33);
+            ReleaseOrders.Controls.Add(EditReleaseOrder);
+            ReleaseOrders.Controls.Add(label34);
+            ReleaseOrders.Controls.Add(label35);
+            ReleaseOrders.Controls.Add(label36);
+            ReleaseOrders.Controls.Add(ReleaseOrderNumberTextBox);
+            ReleaseOrders.Controls.Add(ReleaseOrderGridView);
+            ReleaseOrders.Location = new Point(4, 84);
+            ReleaseOrders.Name = "ReleaseOrders";
+            ReleaseOrders.Padding = new Padding(3);
+            ReleaseOrders.Size = new Size(1358, 541);
+            ReleaseOrders.TabIndex = 5;
+            ReleaseOrders.Text = "Release Orders";
+            ReleaseOrders.UseVisualStyleBackColor = true;
+            // 
+            // ReleaseOrderAddItemToExistedOrder
+            // 
+            ReleaseOrderAddItemToExistedOrder.Location = new Point(334, 159);
+            ReleaseOrderAddItemToExistedOrder.Name = "ReleaseOrderAddItemToExistedOrder";
+            ReleaseOrderAddItemToExistedOrder.Size = new Size(148, 47);
+            ReleaseOrderAddItemToExistedOrder.TabIndex = 58;
+            ReleaseOrderAddItemToExistedOrder.Text = "Add Item";
+            ReleaseOrderAddItemToExistedOrder.UseVisualStyleBackColor = true;
+            ReleaseOrderAddItemToExistedOrder.Click += ReleaseOrderAddItemToExistedOrder_Click;
+            // 
+            // EditDeleteReleaseOrderItem
+            // 
+            EditDeleteReleaseOrderItem.Location = new Point(169, 159);
+            EditDeleteReleaseOrderItem.Name = "EditDeleteReleaseOrderItem";
+            EditDeleteReleaseOrderItem.Size = new Size(148, 47);
+            EditDeleteReleaseOrderItem.TabIndex = 57;
+            EditDeleteReleaseOrderItem.Text = "Edit or Delete";
+            EditDeleteReleaseOrderItem.UseVisualStyleBackColor = true;
+            EditDeleteReleaseOrderItem.Click += EditDeleteReleaseOrderItem_Click;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(43, 172);
+            label30.Name = "label30";
+            label30.Size = new Size(49, 20);
+            label30.TabIndex = 56;
+            label30.Text = "Items";
+            // 
+            // ReleaseOrderItemsGridView
+            // 
+            dataGridViewCellStyle25.BackColor = Color.White;
+            dataGridViewCellStyle25.ForeColor = Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = Color.DarkCyan;
+            ReleaseOrderItemsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            ReleaseOrderItemsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ReleaseOrderItemsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ReleaseOrderItemsGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = Color.Teal;
+            dataGridViewCellStyle26.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle26.ForeColor = Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = Color.White;
+            dataGridViewCellStyle26.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
+            ReleaseOrderItemsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            ReleaseOrderItemsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = Color.White;
+            dataGridViewCellStyle27.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle27.ForeColor = Color.Black;
+            dataGridViewCellStyle27.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle27.SelectionForeColor = Color.White;
+            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.False;
+            ReleaseOrderItemsGridView.DefaultCellStyle = dataGridViewCellStyle27;
+            ReleaseOrderItemsGridView.EnableHeadersVisualStyles = false;
+            ReleaseOrderItemsGridView.Location = new Point(691, 212);
+            ReleaseOrderItemsGridView.Name = "ReleaseOrderItemsGridView";
+            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = Color.White;
+            dataGridViewCellStyle28.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle28.ForeColor = Color.Black;
+            dataGridViewCellStyle28.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle28.SelectionForeColor = Color.White;
+            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.True;
+            ReleaseOrderItemsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            ReleaseOrderItemsGridView.RowHeadersWidth = 51;
+            ReleaseOrderItemsGridView.Size = new Size(664, 323);
+            ReleaseOrderItemsGridView.TabIndex = 55;
+            // 
+            // ReleaseOrderCustomersComboBox
+            // 
+            ReleaseOrderCustomersComboBox.FormattingEnabled = true;
+            ReleaseOrderCustomersComboBox.Location = new Point(169, 117);
+            ReleaseOrderCustomersComboBox.Name = "ReleaseOrderCustomersComboBox";
+            ReleaseOrderCustomersComboBox.Size = new Size(313, 28);
+            ReleaseOrderCustomersComboBox.TabIndex = 54;
+            // 
+            // ReleaseOrdersWaresComboBox
+            // 
+            ReleaseOrdersWaresComboBox.FormattingEnabled = true;
+            ReleaseOrdersWaresComboBox.Location = new Point(169, 70);
+            ReleaseOrdersWaresComboBox.Name = "ReleaseOrdersWaresComboBox";
+            ReleaseOrdersWaresComboBox.Size = new Size(313, 28);
+            ReleaseOrdersWaresComboBox.TabIndex = 53;
+            // 
+            // ReleaseOrderDate
+            // 
+            ReleaseOrderDate.Location = new Point(631, 63);
+            ReleaseOrderDate.Name = "ReleaseOrderDate";
+            ReleaseOrderDate.Size = new Size(310, 27);
+            ReleaseOrderDate.TabIndex = 52;
+            // 
+            // AddReleaseOrder
+            // 
+            AddReleaseOrder.Location = new Point(1006, 5);
+            AddReleaseOrder.Name = "AddReleaseOrder";
+            AddReleaseOrder.Size = new Size(310, 55);
+            AddReleaseOrder.TabIndex = 51;
+            AddReleaseOrder.Text = "Add Order";
+            AddReleaseOrder.UseVisualStyleBackColor = true;
+            AddReleaseOrder.Click += AddReleaseOrder_Click;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(1067, 92);
+            label31.Name = "label31";
+            label31.Size = new Size(183, 20);
+            label31.TabIndex = 50;
+            label31.Text = "Search By Order Number";
+            // 
+            // ReleaseOrderSearchTextBox
+            // 
+            ReleaseOrderSearchTextBox.Location = new Point(1006, 138);
+            ReleaseOrderSearchTextBox.Name = "ReleaseOrderSearchTextBox";
+            ReleaseOrderSearchTextBox.Size = new Size(310, 27);
+            ReleaseOrderSearchTextBox.TabIndex = 49;
+            ReleaseOrderSearchTextBox.TextChanged += ReleaseOrderSearchTextBox_TextChanged;
+            // 
+            // DeleteReleaseOrder
+            // 
+            DeleteReleaseOrder.Location = new Point(631, 111);
+            DeleteReleaseOrder.Name = "DeleteReleaseOrder";
+            DeleteReleaseOrder.Size = new Size(150, 55);
+            DeleteReleaseOrder.TabIndex = 48;
+            DeleteReleaseOrder.Text = "Delete Order";
+            DeleteReleaseOrder.UseVisualStyleBackColor = true;
+            DeleteReleaseOrder.Click += DeleteReleaseOrder_Click;
+            // 
+            // ReleaseOrderIdComboBox
+            // 
+            ReleaseOrderIdComboBox.FormattingEnabled = true;
+            ReleaseOrderIdComboBox.Location = new Point(169, 16);
+            ReleaseOrderIdComboBox.Name = "ReleaseOrderIdComboBox";
+            ReleaseOrderIdComboBox.Size = new Size(313, 28);
+            ReleaseOrderIdComboBox.TabIndex = 47;
+            ReleaseOrderIdComboBox.SelectedIndexChanged += ReleaseOrderIdComboBox_SelectedIndexChanged;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(43, 16);
+            label32.Name = "label32";
+            label32.Size = new Size(69, 20);
+            label32.TabIndex = 46;
+            label32.Text = "Order ID";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(515, 70);
+            label33.Name = "label33";
+            label33.Size = new Size(86, 20);
+            label33.TabIndex = 45;
+            label33.Text = "Order Date";
+            // 
+            // EditReleaseOrder
+            // 
+            EditReleaseOrder.Location = new Point(791, 111);
+            EditReleaseOrder.Name = "EditReleaseOrder";
+            EditReleaseOrder.Size = new Size(150, 55);
+            EditReleaseOrder.TabIndex = 44;
+            EditReleaseOrder.Text = "Edit Order";
+            EditReleaseOrder.UseVisualStyleBackColor = true;
+            EditReleaseOrder.Click += EditReleaseOrder_Click;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(515, 20);
+            label34.Name = "label34";
+            label34.Size = new Size(111, 20);
+            label34.TabIndex = 43;
+            label34.Text = "Order Number";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(43, 67);
+            label35.Name = "label35";
+            label35.Size = new Size(87, 20);
+            label35.TabIndex = 42;
+            label35.Text = "Warehouse";
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(43, 125);
+            label36.Name = "label36";
+            label36.Size = new Size(77, 20);
+            label36.TabIndex = 41;
+            label36.Text = "Customer";
+            // 
+            // ReleaseOrderNumberTextBox
+            // 
+            ReleaseOrderNumberTextBox.Location = new Point(631, 17);
+            ReleaseOrderNumberTextBox.Name = "ReleaseOrderNumberTextBox";
+            ReleaseOrderNumberTextBox.Size = new Size(310, 27);
+            ReleaseOrderNumberTextBox.TabIndex = 40;
+            // 
+            // ReleaseOrderGridView
+            // 
+            dataGridViewCellStyle29.BackColor = Color.White;
+            dataGridViewCellStyle29.ForeColor = Color.Black;
+            dataGridViewCellStyle29.SelectionBackColor = Color.DarkCyan;
+            ReleaseOrderGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            ReleaseOrderGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ReleaseOrderGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ReleaseOrderGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = Color.Teal;
+            dataGridViewCellStyle30.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle30.ForeColor = Color.White;
+            dataGridViewCellStyle30.SelectionBackColor = Color.White;
+            dataGridViewCellStyle30.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle30.WrapMode = DataGridViewTriState.True;
+            ReleaseOrderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            ReleaseOrderGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle31.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = Color.White;
+            dataGridViewCellStyle31.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle31.ForeColor = Color.Black;
+            dataGridViewCellStyle31.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle31.SelectionForeColor = Color.White;
+            dataGridViewCellStyle31.WrapMode = DataGridViewTriState.False;
+            ReleaseOrderGridView.DefaultCellStyle = dataGridViewCellStyle31;
+            ReleaseOrderGridView.EnableHeadersVisualStyles = false;
+            ReleaseOrderGridView.Location = new Point(3, 212);
+            ReleaseOrderGridView.Name = "ReleaseOrderGridView";
+            dataGridViewCellStyle32.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = Color.White;
+            dataGridViewCellStyle32.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle32.ForeColor = Color.Black;
+            dataGridViewCellStyle32.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle32.SelectionForeColor = Color.White;
+            dataGridViewCellStyle32.WrapMode = DataGridViewTriState.True;
+            ReleaseOrderGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            ReleaseOrderGridView.RowHeadersWidth = 51;
+            ReleaseOrderGridView.Size = new Size(671, 323);
+            ReleaseOrderGridView.TabIndex = 39;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Teal;
@@ -1351,6 +1656,10 @@
             SupplyOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)SupplyOrderItemsGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)SupplyOrderGridView).EndInit();
+            ReleaseOrders.ResumeLayout(false);
+            ReleaseOrders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -1400,7 +1709,7 @@
         private Button DeleteSupplier;
         private ComboBox SupplierIdComboBox;
         private Label label8;
-        private ComboBox comboBox2;
+        private ComboBox ReleaseOrdersWaresComboBox;
         private Label label9;
         private Button EditSupplier;
         private Label label10;
@@ -1457,5 +1766,25 @@
         private Button EditDeleteSupplyOrderItem;
         private Label label29;
         private Button SupplyOrderAddItemToExistedOrder;
+        private TabPage ReleaseOrders;
+        private Button ReleaseOrderAddItemToExistedOrder;
+        private Button EditDeleteReleaseOrderItem;
+        private Label label30;
+        private DataGridView ReleaseOrderItemsGridView;
+        private ComboBox ReleaseOrderCustomersComboBox;
+        private DateTimePicker ReleaseOrderDate;
+        private Button AddReleaseOrder;
+        private Label label31;
+        private TextBox ReleaseOrderSearchTextBox;
+        private Button DeleteReleaseOrder;
+        private ComboBox ReleaseOrderIdComboBox;
+        private Label label32;
+        private Label label33;
+        private Button EditReleaseOrder;
+        private Label label34;
+        private Label label35;
+        private Label label36;
+        private TextBox ReleaseOrderNumberTextBox;
+        private DataGridView ReleaseOrderGridView;
     }
 }

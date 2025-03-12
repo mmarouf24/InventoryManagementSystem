@@ -70,12 +70,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(460, 31);
+            label1.Location = new Point(444, 28);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(340, 67);
+            label1.Size = new Size(389, 67);
             label1.TabIndex = 0;
-            label1.Text = "Supply Order";
+            label1.Text = "SUPPLY ORDER";
             // 
             // SuppliersComboBox
             // 

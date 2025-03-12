@@ -75,6 +75,21 @@ namespace InventoryManagementSystem
             SupplyOrdersWaresComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             SupplyOrderSuppliersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            //Release Order Date
+            foreach (var releaseOrder in _Context.ReleaseOrders.ToList())
+            {
+                ReleaseOrderIdComboBox.Items.Add(releaseOrder.ReleaseOrderID);
+                ReleaseOrdersWaresComboBox.Items.Add(releaseOrder.Warehouse.Name);
+                ReleaseOrderCustomersComboBox.Items.Add(releaseOrder.Customer.Name);
+            }
+            if (ReleaseOrderIdComboBox.Items.Count > 0)
+                ReleaseOrderIdComboBox.SelectedIndex = 0;
+            ConfigReleaseOrderTextBoxes();
+            LoadReleaseOrdersData();
+            ReleaseOrderIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ReleaseOrdersWaresComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ReleaseOrderCustomersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         //Item Start
@@ -611,7 +626,7 @@ namespace InventoryManagementSystem
         {
             if (SupplyOrderItemsGridView.Rows.Count > 0)
             {
-                EditSupplyOederItem editForm = new EditSupplyOederItem(Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem));
+                EditSupplyOrderItem editForm = new EditSupplyOrderItem(Convert.ToInt32(SupplyOrderIdComboBox.SelectedItem));
                 editForm.ShowDialog();
                 ConfigSupplyOrderTextBoxes();
                 LoadSupplyOrdersData();
@@ -708,7 +723,7 @@ namespace InventoryManagementSystem
             AddNewSupplyOrder addForm = new AddNewSupplyOrder();
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-                SupplyOrderIdComboBox.Items.Add(_Context.SupplyOrders.Order().Last().SupplierID);
+                SupplyOrderIdComboBox.Items.Add(_Context.SupplyOrders.Order().Last().SupplyOrderID);
                 LoadSupplyOrdersData();
             }
         }
@@ -724,7 +739,8 @@ namespace InventoryManagementSystem
 
             var ExistedOrders = _Context.SupplyOrders
                             .Where(i => i.OrderNumber.Contains(Term))
-                            .Select(i => new {
+                            .Select(i => new
+                            {
                                 i.SupplyOrderID,
                                 WarehouseName = i.Warehouse != null ? i.Warehouse.Name : "N/A",
                                 SupplierName = i.Supplier != null ? i.Supplier.Name : "N/A",
@@ -739,6 +755,219 @@ namespace InventoryManagementSystem
 
         #endregion
         //Supply Order End
+
+
+
+        //Release Order Start
+        #region Release_Order
+        private void ConfigReleaseOrderTextBoxes()
+        {
+            var item = _Context.ReleaseOrders.Find(ReleaseOrderIdComboBox.SelectedItem);
+            if (item != null)
+            {
+                ReleaseOrdersWaresComboBox.SelectedItem = item.Warehouse.Name;
+                ReleaseOrderCustomersComboBox.SelectedItem = item.Customer.Name;
+                ReleaseOrderNumberTextBox.Text = item.OrderNumber;
+                ReleaseOrderDate.Value = item.OrderDate;
+
+            }
+        }
+        private void LoadReleaseOrdersData()
+        {
+            ReleaseOrderGridView.DataSource = _Context.ReleaseOrders
+                                          .Select(i => new
+                                          {
+                                              i.ReleaseOrderID,
+                                              WarehouseName = i.Warehouse != null ? i.Warehouse.Name : "N/A",
+                                              CustomerName = i.Customer != null ? i.Customer.Name : "N/A",
+                                              i.OrderNumber,
+                                              i.OrderDate,
+                                          })
+                                        .ToList();
+
+            if (ReleaseOrderGridView.Rows.Count > 0)
+            {
+                ReleaseOrderGridView.Rows[0].Selected = true;
+                LoadReleaseOrderItems(Convert.ToInt32(ReleaseOrderGridView.Rows[0].Cells["ReleaseOrderID"].Value));
+            }
+
+        }
+
+        private void ReleaseOrderGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int orderId = Convert.ToInt32(ReleaseOrderGridView.Rows[e.RowIndex].Cells["ReleaseOrderID"].Value);
+            LoadReleaseOrderItems(orderId);
+
+        }
+        private void LoadReleaseOrderItems(int i)
+        {
+            if (i >= 0)
+            {
+
+                ReleaseOrderItemsGridView.DataSource = _Context.ReleaseOrderDetails
+                                         .Where(d => d.ReleaseOrderID == i)
+                                         .Select(i => new
+                                         {
+                                             i.Item.Name,
+                                             i.Quantity,
+
+                                         })
+                                          .ToList();
+
+            }
+        }
+
+        private void ReleaseOrderIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ReleaseOrderIdComboBox.SelectedIndex >= 0)
+            {
+                LoadReleaseOrderItems(Convert.ToInt32(ReleaseOrderIdComboBox.SelectedItem));
+            }
+            ConfigReleaseOrderTextBoxes();
+        }
+
+        private void EditDeleteReleaseOrderItem_Click(object sender, EventArgs e)
+        {
+            if (ReleaseOrderItemsGridView.Rows.Count > 0)
+            {
+                EditReleaseOrderItem editForm = new EditReleaseOrderItem(Convert.ToInt32(ReleaseOrderIdComboBox.SelectedItem));
+                editForm.ShowDialog();
+                ConfigReleaseOrderTextBoxes();
+                LoadReleaseOrdersData();
+
+            }
+            else
+            {
+                MessageBox.Show("No Items in this Order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void ReleaseOrderAddItemToExistedOrder_Click(object sender, EventArgs e)
+        {
+            AddReleaseOrderItem editForm = new AddReleaseOrderItem(Convert.ToInt32(ReleaseOrderIdComboBox.SelectedItem));
+            editForm.ShowDialog();
+            ConfigReleaseOrderTextBoxes();
+            LoadReleaseOrdersData();
+        }
+
+        private void EditReleaseOrder_Click(object sender, EventArgs e)
+        {
+            string ordernumber = ReleaseOrderNumberTextBox.Text.Trim();
+            DateTime orderDate = ReleaseOrderDate.Value;
+
+            string warehouse = ReleaseOrdersWaresComboBox.SelectedItem.ToString();
+            string customer = ReleaseOrderCustomersComboBox.SelectedItem.ToString();
+
+            if (ReleaseOrderIdComboBox.Items.Count > 0)
+            {
+                bool isCodeExists = _Context.ReleaseOrders.Any(i => i.OrderNumber == ordernumber && i.ReleaseOrderID != int.Parse(ReleaseOrderIdComboBox.SelectedItem.ToString()));
+
+                if (isCodeExists)
+                {
+                    MessageBox.Show("Editing Failed!, The Order Number you entered is already existed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var ExistedOrder = _Context.ReleaseOrders.Find(ReleaseOrderIdComboBox.SelectedItem);
+
+                var warehouseId = _Context.Warehouses.Where(i => i.Name == warehouse).FirstOrDefault();
+                var customerId = _Context.Customers.Where(i => i.Name == customer).FirstOrDefault();
+
+                ExistedOrder.WarehouseID = warehouseId.WarehouseID;
+                ExistedOrder.CustomerID = customerId.CustomerID;
+                ExistedOrder.OrderNumber = ordernumber;
+                ExistedOrder.OrderDate = orderDate;
+                _Context.SaveChanges();
+                MessageBox.Show("Successfully Edited Release Order !", "Success", MessageBoxButtons.OK);
+                LoadReleaseOrdersData();
+            }
+            else
+                MessageBox.Show("No Release Orders To Edit!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void DeleteReleaseOrder_Click(object sender, EventArgs e)
+        {
+            if (ReleaseOrderIdComboBox.Items.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this item?",
+                                                       "Delete Confirmation",
+                                                        MessageBoxButtons.YesNo,
+                                                        MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    var orderToDelete = _Context.ReleaseOrders.Find(ReleaseOrderIdComboBox.SelectedItem);
+                    var orderItemsToDelete = _Context.ReleaseOrderDetails.Where(d => d.ReleaseOrderID == Convert.ToInt32(ReleaseOrderIdComboBox.SelectedItem)).ToList();
+
+                    _Context.ReleaseOrderDetails.RemoveRange(orderItemsToDelete);
+                    _Context.ReleaseOrders.Remove(orderToDelete);
+                    _Context.SaveChanges();
+                    MessageBox.Show("Release Order deleted successfully!", "Success", MessageBoxButtons.OK);
+                    ReleaseOrderIdComboBox.Items.Remove(ReleaseOrderIdComboBox.SelectedItem);
+                    if (ReleaseOrderIdComboBox.Items.Count > 0)
+                        ReleaseOrderIdComboBox.SelectedIndex = 0;
+                    ConfigReleaseOrderTextBoxes();
+                    LoadReleaseOrdersData();
+                }
+                else
+                {
+
+                    MessageBox.Show("Operation canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("No Release Orders To Delete!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AddReleaseOrder_Click(object sender, EventArgs e)
+        {
+            AddNewReleaseOrder addForm = new AddNewReleaseOrder();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                ReleaseOrderIdComboBox.Items.Add(_Context.ReleaseOrders.Order().Last().ReleaseOrderID);
+                LoadReleaseOrdersData();
+            }
+        }
+
+        private void ReleaseOrderSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string Term = ReleaseOrderSearchTextBox.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(Term))
+            {
+                LoadReleaseOrdersData();
+                return;
+            }
+
+            var ExistedOrders = _Context.ReleaseOrders
+                            .Where(i => i.OrderNumber.Contains(Term))
+                            .Select(i => new
+                            {
+                                i.ReleaseOrderID,
+                                WarehouseName = i.Warehouse != null ? i.Warehouse.Name : "N/A",
+                                CustomerName = i.Customer != null ? i.Customer.Name : "N/A",
+                                i.OrderNumber,
+                                i.OrderDate,
+                            })
+                            .ToList();
+            if (ExistedOrders.Any())
+                ReleaseOrderGridView.DataSource = ExistedOrders;
+        }
+
+
+
+
+
+
+
+
+
+
+        #endregion
+        //Supply Order End
+
 
 
     }

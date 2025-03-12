@@ -3,32 +3,72 @@
   "WorkspaceRootPath": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewreleaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewreleaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewreleaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewreleaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\editreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\editreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\editreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\editreleaseorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\editsupplyoederitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\editsupplyoederitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addreleaseorderitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addreleaseorderitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\editsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\editsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addsupplyorderitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addsupplyorderitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\editsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\editsupplyorderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|d:\\my iti\\c#\\entity framework project\\inventorymanagementsystem\\screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEAEE83C-FDCD-42D2-AF90-2063B8C4E19D}|InventoryManagementSystem.csproj|solutionrelative:screens\\addnewsupplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,94 +78,220 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddSupplyOrderItem.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
-              "RelativeDocumentMoniker": "Screens\\AddSupplyOrderItem.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
-              "RelativeToolTip": "Screens\\AddSupplyOrderItem.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwD8AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T16:39:08.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AddSupplyOrderItem.cs [Design]",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
-              "RelativeDocumentMoniker": "Screens\\AddSupplyOrderItem.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs [Design]",
-              "RelativeToolTip": "Screens\\AddSupplyOrderItem.cs [Design]",
+              "Title": "AddNewReleaseOrder.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewReleaseOrder.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewReleaseOrder.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewReleaseOrder.cs [Design]",
+              "RelativeToolTip": "Screens\\AddNewReleaseOrder.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T16:39:05.236Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddNewSupplyOrder.cs [Design]",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
-              "RelativeDocumentMoniker": "Screens\\AddNewSupplyOrder.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs [Design]",
-              "RelativeToolTip": "Screens\\AddNewSupplyOrder.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:57:50.41Z",
+              "WhenOpened": "2025-03-12T18:17:07.132Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "EditSupplyOederItem.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOederItem.cs",
-              "RelativeDocumentMoniker": "Screens\\EditSupplyOederItem.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOederItem.cs",
-              "RelativeToolTip": "Screens\\EditSupplyOederItem.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwEcAAAAAAAAAAAAAAA==",
+              "Title": "AddNewReleaseOrder.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewReleaseOrder.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewReleaseOrder.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewReleaseOrder.cs",
+              "RelativeToolTip": "Screens\\AddNewReleaseOrder.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAYwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:33:31.173Z",
+              "WhenOpened": "2025-03-12T18:20:52.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddNewSupplyOrder.cs",
-              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
-              "RelativeDocumentMoniker": "Screens\\AddNewSupplyOrder.cs",
-              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
-              "RelativeToolTip": "Screens\\AddNewSupplyOrder.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGYAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:27:02.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAD0CAAAAAAAAAAAowDACAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAACgCAAAAAAAAAAAIwP8CAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T03:32:53.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T05:20:58.397Z",
+              "WhenOpened": "2025-03-12T18:39:52.08Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddReleaseOrderItem.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddReleaseOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.cs [Design]",
+              "RelativeToolTip": "Screens\\AddReleaseOrderItem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:33:16.493Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddReleaseOrderItem.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddReleaseOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.cs",
+              "RelativeToolTip": "Screens\\AddReleaseOrderItem.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwCsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:34:14.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EditReleaseOrderItem.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditReleaseOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\EditReleaseOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditReleaseOrderItem.cs",
+              "RelativeToolTip": "Screens\\EditReleaseOrderItem.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAUwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:36:23.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditReleaseOrderItem.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditReleaseOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\EditReleaseOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditReleaseOrderItem.cs [Design]",
+              "RelativeToolTip": "Screens\\EditReleaseOrderItem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:36:01.881Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddSupplyOrderItem.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddSupplyOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
+              "RelativeToolTip": "Screens\\AddSupplyOrderItem.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:00:03.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddSupplyOrderItem.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\AddSupplyOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.cs [Design]",
+              "RelativeToolTip": "Screens\\AddSupplyOrderItem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:31:59.705Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddReleaseOrderItem.Designer.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.Designer.cs",
+              "RelativeDocumentMoniker": "Screens\\AddReleaseOrderItem.Designer.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddReleaseOrderItem.Designer.cs",
+              "RelativeToolTip": "Screens\\AddReleaseOrderItem.Designer.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:00:45.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EditSupplyOrderItem.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\EditSupplyOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOrderItem.cs [Design]",
+              "RelativeToolTip": "Screens\\EditSupplyOrderItem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:35:15.346Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddSupplyOrderItem.Designer.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.Designer.cs",
+              "RelativeDocumentMoniker": "Screens\\AddSupplyOrderItem.Designer.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddSupplyOrderItem.Designer.cs",
+              "RelativeToolTip": "Screens\\AddSupplyOrderItem.Designer.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAYwMAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:00:11.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EditSupplyOrderItem.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOrderItem.cs",
+              "RelativeDocumentMoniker": "Screens\\EditSupplyOrderItem.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\EditSupplyOrderItem.cs",
+              "RelativeToolTip": "Screens\\EditSupplyOrderItem.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAowGgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:49:00.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAM4FAAAAAAAAAAAqwN4FAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:32:19.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddNewSupplyOrder.cs",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewSupplyOrder.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
+              "RelativeToolTip": "Screens\\AddNewSupplyOrder.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwH0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:20:33.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddNewSupplyOrder.cs [Design]",
+              "DocumentMoniker": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs",
+              "RelativeDocumentMoniker": "Screens\\AddNewSupplyOrder.cs",
+              "ToolTip": "D:\\My ITI\\C#\\Entity Framework Project\\InventoryManagementSystem\\Screens\\AddNewSupplyOrder.cs [Design]",
+              "RelativeToolTip": "Screens\\AddNewSupplyOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:17:20.238Z",
               "EditorCaption": " [Design]"
             }
           ]

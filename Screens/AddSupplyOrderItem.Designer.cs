@@ -190,6 +190,7 @@
             RightToLeftLayout = true;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add Supply Order Item";
+
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

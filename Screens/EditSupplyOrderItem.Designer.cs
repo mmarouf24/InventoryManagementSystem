@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementSystem.Screens
 {
-    partial class EditSupplyOederItem
+    partial class EditSupplyOrderItem
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             panel1 = new Panel();
             label1 = new Label();
             Close = new Button();
-            EditSupplyOrderItem = new Button();
+            EditSupplyOrderItemBtn = new Button();
             SupplyOrderItemQTextBox = new TextBox();
             label3 = new Label();
             label2 = new Label();
@@ -112,15 +112,15 @@
             // 
             // EditSupplyOrderItem
             // 
-            EditSupplyOrderItem.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            EditSupplyOrderItem.Location = new Point(256, 357);
-            EditSupplyOrderItem.Margin = new Padding(6, 5, 6, 5);
-            EditSupplyOrderItem.Name = "EditSupplyOrderItem";
-            EditSupplyOrderItem.Size = new Size(197, 45);
-            EditSupplyOrderItem.TabIndex = 59;
-            EditSupplyOrderItem.Text = "Edit";
-            EditSupplyOrderItem.UseVisualStyleBackColor = true;
-            EditSupplyOrderItem.Click += EditSupplyOrderItem_Click;
+            EditSupplyOrderItemBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            EditSupplyOrderItemBtn.Location = new Point(256, 357);
+            EditSupplyOrderItemBtn.Margin = new Padding(6, 5, 6, 5);
+            EditSupplyOrderItemBtn.Name = "EditSupplyOrderItemBtn";
+            EditSupplyOrderItemBtn.Size = new Size(197, 45);
+            EditSupplyOrderItemBtn.TabIndex = 59;
+            EditSupplyOrderItemBtn.Text = "Edit";
+            EditSupplyOrderItemBtn.UseVisualStyleBackColor = true;
+            EditSupplyOrderItemBtn.Click += EditSupplyOrderItem_Click;
             // 
             // SupplyOrderItemQTextBox
             // 
@@ -195,7 +195,7 @@
             Controls.Add(label7);
             Controls.Add(panel1);
             Controls.Add(Close);
-            Controls.Add(EditSupplyOrderItem);
+            Controls.Add(EditSupplyOrderItemBtn);
             Controls.Add(SupplyOrderItemQTextBox);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -216,7 +216,7 @@
         private Panel panel1;
         private Label label1;
         private Button Close;
-        private Button EditSupplyOrderItem;
+        private Button EditSupplyOrderItemBtn;
         private TextBox SupplyOrderItemQTextBox;
         private Label label3;
         private Label label2;

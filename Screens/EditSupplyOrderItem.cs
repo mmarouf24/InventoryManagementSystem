@@ -12,12 +12,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagementSystem.Screens
 {
-    public partial class EditSupplyOederItem : Form
+    public partial class EditSupplyOrderItem : Form
     {
         EFModel _Context;
         int SupplyOrderID;
 
-        public EditSupplyOederItem(int SupplyOrderID)
+        public EditSupplyOrderItem(int SupplyOrderID)
         {
             InitializeComponent();
 

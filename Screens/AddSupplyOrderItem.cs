@@ -60,7 +60,7 @@ namespace InventoryManagementSystem.Screens
                     _Context.SupplyOrderDetails.Add(item);
                     _Context.SaveChanges();
                     MessageBox.Show("Successfully Added Item To Supply order !", "Success", MessageBoxButtons.OK);
-                    SupplyOrderItemExpiryTextBox .Text = SupplyOrderItemQTextBox.Text="";
+                    SupplyOrderItemExpiryTextBox.Text = SupplyOrderItemQTextBox.Text = "";
                     this.DialogResult = DialogResult.OK;
                 }
                 else
@@ -75,7 +75,8 @@ namespace InventoryManagementSystem.Screens
         private void Close_Click(object sender, EventArgs e)
         {
             this.Close();
-           
+
         }
+
     }
 }
