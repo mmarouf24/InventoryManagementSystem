@@ -97,12 +97,12 @@ namespace InventoryManagementSystem.Screens
                 try
                 {
 
+                    UpdateStockAfterRelease(releaseOrder);
                     _Context.ReleaseOrderDetails.Add(item);
                     MessageBox.Show("Successfully Added Release Order and Item To it !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     _Context.SaveChanges();
                     this.DialogResult = DialogResult.OK;
 
-                    UpdateStockAfterRelease(releaseOrder);
                    
                     this.Close();
                     ReleaseOrderItemQTextBox.Text = "";

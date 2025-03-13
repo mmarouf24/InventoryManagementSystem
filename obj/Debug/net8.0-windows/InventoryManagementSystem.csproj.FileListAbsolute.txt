@@ -128,7 +128,6 @@ D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\bin\Debug\net8.0
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.csproj.AssemblyReference.cache
-D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Form1.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.csproj.GenerateResource.cache
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.AssemblyInfoInputs.cache
@@ -156,3 +155,4 @@ D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.EditTransferItem.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewItemToTransfer.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewTransfer.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Application.resources

@@ -7,7 +7,7 @@
     <Compile Update="Screens\AddNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Application.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Screens\AddNewItemToTransfer.cs">

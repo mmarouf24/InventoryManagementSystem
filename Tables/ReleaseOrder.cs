@@ -24,7 +24,7 @@ namespace InventoryManagementSystem.Tables
         [MaxLength(50)]
         public string OrderNumber { get; set; }
 
-        [Column(TypeName = "date")]
+       // [Column(TypeName = "date")]
         public DateTime OrderDate { get; set; }
         public virtual Customer Customer { get; set; }
 
