@@ -1,13 +1,16 @@
+using System;
+using System.Windows.Forms;
 using InventoryManagementSystem.Screens;
 using InventoryManagementSystem.Tables;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace InventoryManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class Application : Form
     {
         EFModel _Context;
-        public Form1()
+        public Application()
         {
             InitializeComponent();
 
@@ -18,6 +21,12 @@ namespace InventoryManagementSystem
             foreach (var warehouse in _Context.Warehouses.ToList())
             {
                 WarehouseIdComboBox.Items.Add(warehouse.WarehouseID);
+                SupplyOrdersWaresComboBox.Items.Add(warehouse.Name);
+                ReleaseOrdersWaresComboBox.Items.Add(warehouse.Name);
+                FromWarehousesComboBox.Items.Add(warehouse.Name);
+                ToWarehousesComboBox.Items.Add(warehouse.Name);
+                WarehousesListBox.Items.Add(warehouse.Name);
+
             }
             if (WarehouseIdComboBox.Items.Count > 0)
                 WarehouseIdComboBox.SelectedIndex = 0;
@@ -42,6 +51,8 @@ namespace InventoryManagementSystem
             foreach (var supplier in _Context.Suppliers.ToList())
             {
                 SupplierIdComboBox.Items.Add(supplier.SupplierID);
+
+                SupplyOrderSuppliersComboBox.Items.Add(supplier.Name);
             }
             if (SupplierIdComboBox.Items.Count > 0)
                 SupplierIdComboBox.SelectedIndex = 0;
@@ -53,6 +64,7 @@ namespace InventoryManagementSystem
             foreach (var customer in _Context.Customers.ToList())
             {
                 CustomerIdComboBox.Items.Add(customer.CustomerID);
+                ReleaseOrderCustomersComboBox.Items.Add(customer.Name);
             }
             if (CustomerIdComboBox.Items.Count > 0)
                 CustomerIdComboBox.SelectedIndex = 0;
@@ -64,8 +76,6 @@ namespace InventoryManagementSystem
             foreach (var supplyOrder in _Context.SupplyOrders.ToList())
             {
                 SupplyOrderIdComboBox.Items.Add(supplyOrder.SupplyOrderID);
-                SupplyOrdersWaresComboBox.Items.Add(supplyOrder.Warehouse.Name);
-                SupplyOrderSuppliersComboBox.Items.Add(supplyOrder.Supplier.Name);
             }
             if (SupplyOrderIdComboBox.Items.Count > 0)
                 SupplyOrderIdComboBox.SelectedIndex = 0;
@@ -79,8 +89,7 @@ namespace InventoryManagementSystem
             foreach (var releaseOrder in _Context.ReleaseOrders.ToList())
             {
                 ReleaseOrderIdComboBox.Items.Add(releaseOrder.ReleaseOrderID);
-                ReleaseOrdersWaresComboBox.Items.Add(releaseOrder.Warehouse.Name);
-                ReleaseOrderCustomersComboBox.Items.Add(releaseOrder.Customer.Name);
+
             }
             if (ReleaseOrderIdComboBox.Items.Count > 0)
                 ReleaseOrderIdComboBox.SelectedIndex = 0;
@@ -91,11 +100,7 @@ namespace InventoryManagementSystem
             ReleaseOrderCustomersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //Transfer Items Data
-            foreach (var warehouse in _Context.Warehouses.ToList())
-            {
-                FromWarehousesComboBox.Items.Add(warehouse.Name);
-                ToWarehousesComboBox.Items.Add(warehouse.Name);
-            }
+
             FromWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ToWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -103,7 +108,7 @@ namespace InventoryManagementSystem
             foreach (var transfer in _Context.StockTransfers.ToList())
             {
                 TransferIDComboBox.Items.Add(transfer.TransferID);
-               
+
             }
 
             if (TransferIDComboBox.Items.Count > 0)
@@ -114,6 +119,9 @@ namespace InventoryManagementSystem
             FromWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ToWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+
+            ReportTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ReportTypeComboBox.SelectedIndex = 0;
         }
 
         //Item Start
@@ -143,10 +151,10 @@ namespace InventoryManagementSystem
 
             if (ItemIDComboBox.Items.Count > 0)
             {
-            string name = ItemNameTextBox.Text.Trim();
-            string code = ItemCodeTextBox.Text.Trim();
+                string name = ItemNameTextBox.Text.Trim();
+                string code = ItemCodeTextBox.Text.Trim();
 
-            string unit = UnitComboBox.SelectedItem.ToString();
+                string unit = UnitComboBox.SelectedItem.ToString();
 
                 bool isCodeExists = _Context.Items.Any(i => i.Code == code && i.ItemID != int.Parse(ItemIDComboBox.SelectedItem.ToString()));
 
@@ -253,9 +261,9 @@ namespace InventoryManagementSystem
         {
             if (WarehouseIdComboBox.Items.Count > 0)
             {
-            string name = WarehouseNameTextBox.Text.Trim();
-            string address = WarehouseAddressTextBox.Text.Trim();
-            string manager = WarehouseManagerTextBox.Text.Trim();
+                string name = WarehouseNameTextBox.Text.Trim();
+                string address = WarehouseAddressTextBox.Text.Trim();
+                string manager = WarehouseManagerTextBox.Text.Trim();
 
                 bool isCodeExists = _Context.Warehouses.Any(i => i.Name == name && i.WarehouseID != int.Parse(WarehouseIdComboBox.SelectedItem.ToString()));
 
@@ -365,12 +373,12 @@ namespace InventoryManagementSystem
         {
             if (SupplierIdComboBox.Items.Count > 0)
             {
-            string name = SupplierNameTextBox.Text.Trim();
-            string phone = SupplierPhoneTextBox.Text.Trim();
-            string mobile = SupplierMobileTextBox.Text.Trim();
-            string fax = SupplierFaxTextBox.Text.Trim();
-            string email = SupplierEmailTextBox.Text.Trim();
-            string website = SupplierWebsiteTextBox.Text.Trim();
+                string name = SupplierNameTextBox.Text.Trim();
+                string phone = SupplierPhoneTextBox.Text.Trim();
+                string mobile = SupplierMobileTextBox.Text.Trim();
+                string fax = SupplierFaxTextBox.Text.Trim();
+                string email = SupplierEmailTextBox.Text.Trim();
+                string website = SupplierWebsiteTextBox.Text.Trim();
 
                 bool isCodeExists = _Context.Suppliers.Any(i => i.Mobile == mobile && i.SupplierID != int.Parse(SupplierIdComboBox.SelectedItem.ToString()));
 
@@ -480,12 +488,12 @@ namespace InventoryManagementSystem
         {
             if (CustomerIdComboBox.Items.Count > 0)
             {
-            string name = CustomerNameTextBox.Text.Trim();
-            string phone = CustomerPhoneTextBox.Text.Trim();
-            string mobile = CustomerMobileTextBox.Text.Trim();
-            string fax = CustomerFaxTextBox.Text.Trim();
-            string email = CustomerEmailTextBox.Text.Trim();
-            string website = CustomerWebsiteTextBox.Text.Trim();
+                string name = CustomerNameTextBox.Text.Trim();
+                string phone = CustomerPhoneTextBox.Text.Trim();
+                string mobile = CustomerMobileTextBox.Text.Trim();
+                string fax = CustomerFaxTextBox.Text.Trim();
+                string email = CustomerEmailTextBox.Text.Trim();
+                string website = CustomerWebsiteTextBox.Text.Trim();
 
                 bool isCodeExists = _Context.Customers.Any(i => i.Mobile == mobile && i.CustomerID != int.Parse(CustomerIdComboBox.SelectedItem.ToString()));
 
@@ -671,11 +679,11 @@ namespace InventoryManagementSystem
 
             if (SupplyOrderIdComboBox.Items.Count > 0)
             {
-            string ordernumber = SupplyOrderNumberTextBox.Text.Trim();
-            DateTime orderDate = SupplyOrderDate.Value;
+                string ordernumber = SupplyOrderNumberTextBox.Text.Trim();
+                DateTime orderDate = SupplyOrderDate.Value;
 
-            string warehouse = SupplyOrdersWaresComboBox.SelectedItem.ToString();
-            string supplier = SupplyOrderSuppliersComboBox.SelectedItem.ToString();
+                string warehouse = SupplyOrdersWaresComboBox.SelectedItem.ToString();
+                string supplier = SupplyOrderSuppliersComboBox.SelectedItem.ToString();
                 bool isCodeExists = _Context.SupplyOrders.Any(i => i.OrderNumber == ordernumber && i.SupplyOrderID != int.Parse(SupplyOrderIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -875,11 +883,11 @@ namespace InventoryManagementSystem
 
             if (ReleaseOrderIdComboBox.Items.Count > 0)
             {
-            string ordernumber = ReleaseOrderNumberTextBox.Text.Trim();
-            DateTime orderDate = ReleaseOrderDate.Value;
+                string ordernumber = ReleaseOrderNumberTextBox.Text.Trim();
+                DateTime orderDate = ReleaseOrderDate.Value;
 
-            string warehouse = ReleaseOrdersWaresComboBox.SelectedItem.ToString();
-            string customer = ReleaseOrderCustomersComboBox.SelectedItem.ToString();
+                string warehouse = ReleaseOrdersWaresComboBox.SelectedItem.ToString();
+                string customer = ReleaseOrderCustomersComboBox.SelectedItem.ToString();
                 bool isCodeExists = _Context.ReleaseOrders.Any(i => i.OrderNumber == ordernumber && i.ReleaseOrderID != int.Parse(ReleaseOrderIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -1024,7 +1032,7 @@ namespace InventoryManagementSystem
                                          .Where(d => d.TransferID == i)
                                          .Select(m => new
                                          {
-                                             
+
                                              m.Item.Name,
                                              m.Quantity,
                                              SUpplier = m.Supplier.Name,
@@ -1084,8 +1092,8 @@ namespace InventoryManagementSystem
                 DateTime transferDate = TransferDateItem.Value;
 
                 string fromWarehouse = FromWarehousesComboBox.SelectedItem.ToString();
-                string toWarehouse =ToWarehousesComboBox.SelectedItem.ToString();
-                if(fromWarehouse==toWarehouse)
+                string toWarehouse = ToWarehousesComboBox.SelectedItem.ToString();
+                if (fromWarehouse == toWarehouse)
                 {
                     MessageBox.Show("Editing Failed!, Source and Distination cant be one", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ConfigTransfersTextBoxes();
@@ -1104,9 +1112,9 @@ namespace InventoryManagementSystem
 
                 var fromWarehouseId = _Context.Warehouses.Where(i => i.Name == fromWarehouse).FirstOrDefault();
                 var toWarehouseId = _Context.Warehouses.Where(i => i.Name == toWarehouse).FirstOrDefault();
-               
 
-                ExistedOrder.FromWarehouseID =fromWarehouseId.WarehouseID;
+
+                ExistedOrder.FromWarehouseID = fromWarehouseId.WarehouseID;
                 ExistedOrder.ToWarehouseID = toWarehouseId.WarehouseID;
                 ExistedOrder.TransferDate = transferDate;
                 _Context.SaveChanges();
@@ -1127,18 +1135,145 @@ namespace InventoryManagementSystem
                 LoadTransfersData();
             }
 
+
+
+            #endregion
+            //Transfer End
         }
 
 
+        //Reports Start
+        #region Reports
+        private void GenereteReport_Click(object sender, EventArgs e)
+        {
+            string selectedReport = ReportTypeComboBox.SelectedItem.ToString();
+            DateTime startDate = ReportFromDate.Value;
+            DateTime endDate = ReportToDate.Value;
+
+            List<string> selectedWarehouses = WarehousesListBox.CheckedItems.Cast<string>().ToList();
 
 
+            List<object> reportData = new List<object>();
 
+            switch (selectedReport)
+            {
+
+                case "Warehouse Report":
+                    reportData = GetWarehouseReport(selectedWarehouses, startDate, endDate);
+                    break;
+                case "Item Report":
+                    reportData = GetItemReport(selectedWarehouses, startDate, endDate);
+                    break;
+                case "Item Movement Report":
+                    reportData = GetItemMovementReport(selectedWarehouses, startDate, endDate);
+                    break;
+                case "Expired Items Report":
+                    reportData = GetExpiredItemsReport(selectedWarehouses);
+                    break;
+                case "Near Expiration Items Report":
+                    reportData = GetNearExpirationItemsReport(selectedWarehouses);
+                    break;
+
+            }
+
+            if (reportData.Count == 0)
+            {
+                MessageBox.Show("No data available for this report!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                ReportGridView.DataSource = reportData;
+            }
+        }
+
+
+        private List<object> GetWarehouseReport(List<string> warehouses, DateTime startDate, DateTime endDate)
+        {
+            return _Context.Stocks
+                .Where(s => warehouses.Contains(s.Warehouse.Name))
+                .Select(s => new
+                {
+                    Warehouse = s.Warehouse.Name,
+                    Item = s.Item.Name,
+                    Quantity = s.Quantity
+                }).ToList<object>();
+        }
+        private List<object> GetItemReport(List<string> warehouses, DateTime startDate, DateTime endDate)
+        {
+            return _Context.Stocks
+                .Where(s => warehouses.Contains(s.Warehouse.Name))
+                .Select(s => new
+                {
+                    Item = s.Item.Name,
+                    Warehouse = s.Warehouse.Name,
+                    Quantity = s.Quantity
+                }).ToList<object>();
+        }
+
+        private List<object> GetItemMovementReport(List<string> warehouses, DateTime startDate, DateTime endDate)
+        {
+            return _Context.ReleaseOrderDetails
+                .Where(d => warehouses.Contains(d.ReleaseOrder.Warehouse.Name) &&
+                            d.ReleaseOrder.OrderDate >= startDate && d.ReleaseOrder.OrderDate <= endDate)
+                .Select(d => new
+                {
+                    Item = d.Item.Name,
+                    Warehouse = d.ReleaseOrder.Warehouse.Name,
+                    Quantity = d.Quantity,
+                    Date = d.ReleaseOrder.OrderDate
+                }).ToList<object>();
+        }
+
+        private List<object> GetExpiredItemsReport(List<string> warehouses)
+        {
+            DateTime today = DateTime.Now;
+
+            return _Context.SupplyOrderDetails
+                .Where(d => warehouses.Contains(d.SupplyOrder.Warehouse.Name) &&
+                            d.ProductionDate.AddMonths(d.ExpirationPeriod) < today)
+                .Select(d => new
+                {
+                    Item = d.Item.Name,
+                    Warehouse = d.SupplyOrder.Warehouse.Name,
+                    ExpirationDate = d.ProductionDate.AddMonths(d.ExpirationPeriod)
+                }).ToList<object>();
+        }
+
+        private List<object> GetNearExpirationItemsReport(List<string> warehouses)
+        {
+            DateTime today = DateTime.Now;
+            DateTime nearExpirationThreshold = today.AddMonths(1);
+
+            return _Context.SupplyOrderDetails
+                .Where(d => warehouses.Contains(d.SupplyOrder.Warehouse.Name) &&
+                            d.ProductionDate.AddMonths(d.ExpirationPeriod) >= today &&
+                            d.ProductionDate.AddMonths(d.ExpirationPeriod) <= nearExpirationThreshold)
+                .Select(d => new
+                {
+                    Item = d.Item.Name,
+                    Warehouse = d.SupplyOrder.Warehouse.Name,
+                    ExpirationDate = d.ProductionDate.AddMonths(d.ExpirationPeriod)
+                }).ToList<object>();
+        }
+
+        private void ReportTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReportGridView.DataSource = null;
+        }
+
+        private void Application_Load(object sender, EventArgs e)
+        {
+            Tabs.SizeMode = TabSizeMode.Fixed;
+
+            int tabWidth = Tabs.Width / Tabs.TabCount;
+
+            Tabs.ItemSize = new Size(tabWidth, 90);
+
+        }
 
 
         #endregion
-        //Transfer End
-
-
+        //Reports End
 
     }
 }

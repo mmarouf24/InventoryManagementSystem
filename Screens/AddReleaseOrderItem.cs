@@ -42,7 +42,7 @@ namespace InventoryManagementSystem.Screens
 
 
                 var ifExistedItem = _Context.ReleaseOrderDetails
-                            .FirstOrDefault(i => i.Item.Name == ReleaseOrderItemsComboBox.SelectedItem.ToString());
+                            .FirstOrDefault(i => i.Item.Name == ReleaseOrderItemsComboBox.SelectedItem.ToString() && i.ReleaseOrderID==ReleaseOrderID);
                 if (ifExistedItem == null)
                 {
                     var index = _Context.Items.Where(i => i.Name == name).FirstOrDefault();

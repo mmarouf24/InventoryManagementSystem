@@ -45,7 +45,7 @@ namespace InventoryManagementSystem.Screens
 
 
                 var ifExistedItem = _Context.SupplyOrderDetails
-                            .FirstOrDefault(i => i.Item.Name == ItemsCombobox.SelectedItem.ToString());
+                            .FirstOrDefault(i => i.Item.Name == ItemsCombobox.SelectedItem.ToString() && i.SupplyOrderID==SupplyOrderID);
                 if (ifExistedItem == null)
                 {
                     var index = _Context.Items.Where(i => i.Name == name).FirstOrDefault();

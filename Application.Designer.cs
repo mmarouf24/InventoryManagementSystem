@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementSystem
 {
-    partial class Form1
+    partial class Application
     {
         /// <summary>
         ///  Required designer variable.
@@ -68,6 +68,10 @@
             DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -183,7 +187,7 @@
             label36 = new Label();
             ReleaseOrderNumberTextBox = new TextBox();
             ReleaseOrderGridView = new DataGridView();
-            tabPage1 = new TabPage();
+            Transfers = new TabPage();
             AddItemToTransfer = new Button();
             EditDeleteItemTransfer = new Button();
             label37 = new Label();
@@ -199,6 +203,16 @@
             label42 = new Label();
             label43 = new Label();
             TransferGridView = new DataGridView();
+            Reports = new TabPage();
+            WarehousesListBox = new CheckedListBox();
+            GenereteReport = new Button();
+            ReportTypeComboBox = new ComboBox();
+            label44 = new Label();
+            ReportToDate = new DateTimePicker();
+            label41 = new Label();
+            ReportFromDate = new DateTimePicker();
+            label38 = new Label();
+            ReportGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -216,9 +230,11 @@
             ReleaseOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).BeginInit();
-            tabPage1.SuspendLayout();
+            Transfers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TransferDetailsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TransferGridView).BeginInit();
+            Reports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ReportGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -230,14 +246,18 @@
             Tabs.Controls.Add(Customers);
             Tabs.Controls.Add(SupplyOrders);
             Tabs.Controls.Add(ReleaseOrders);
-            Tabs.Controls.Add(tabPage1);
+            Tabs.Controls.Add(Transfers);
+            Tabs.Controls.Add(Reports);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
             Tabs.Location = new Point(0, 113);
+            Tabs.Multiline = true;
             Tabs.Name = "Tabs";
+            Tabs.RightToLeft = RightToLeft.No;
             Tabs.SelectedIndex = 0;
             Tabs.Size = new Size(1366, 629);
+            Tabs.SizeMode = TabSizeMode.Fixed;
             Tabs.TabIndex = 0;
             // 
             // Items
@@ -1613,30 +1633,30 @@
             ReleaseOrderGridView.Size = new Size(671, 323);
             ReleaseOrderGridView.TabIndex = 39;
             // 
-            // tabPage1
+            // Transfers
             // 
-            tabPage1.Controls.Add(AddItemToTransfer);
-            tabPage1.Controls.Add(EditDeleteItemTransfer);
-            tabPage1.Controls.Add(label37);
-            tabPage1.Controls.Add(TransferDetailsGridView);
-            tabPage1.Controls.Add(ToWarehousesComboBox);
-            tabPage1.Controls.Add(FromWarehousesComboBox);
-            tabPage1.Controls.Add(TransferDateItem);
-            tabPage1.Controls.Add(AddNewTransfer);
-            tabPage1.Controls.Add(TransferIDComboBox);
-            tabPage1.Controls.Add(label39);
-            tabPage1.Controls.Add(label40);
-            tabPage1.Controls.Add(EditTransfer);
-            tabPage1.Controls.Add(label42);
-            tabPage1.Controls.Add(label43);
-            tabPage1.Controls.Add(TransferGridView);
-            tabPage1.Location = new Point(4, 84);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1358, 541);
-            tabPage1.TabIndex = 6;
-            tabPage1.Text = "Transfers";
-            tabPage1.UseVisualStyleBackColor = true;
+            Transfers.Controls.Add(AddItemToTransfer);
+            Transfers.Controls.Add(EditDeleteItemTransfer);
+            Transfers.Controls.Add(label37);
+            Transfers.Controls.Add(TransferDetailsGridView);
+            Transfers.Controls.Add(ToWarehousesComboBox);
+            Transfers.Controls.Add(FromWarehousesComboBox);
+            Transfers.Controls.Add(TransferDateItem);
+            Transfers.Controls.Add(AddNewTransfer);
+            Transfers.Controls.Add(TransferIDComboBox);
+            Transfers.Controls.Add(label39);
+            Transfers.Controls.Add(label40);
+            Transfers.Controls.Add(EditTransfer);
+            Transfers.Controls.Add(label42);
+            Transfers.Controls.Add(label43);
+            Transfers.Controls.Add(TransferGridView);
+            Transfers.Location = new Point(4, 84);
+            Transfers.Name = "Transfers";
+            Transfers.Padding = new Padding(3);
+            Transfers.Size = new Size(1358, 541);
+            Transfers.TabIndex = 6;
+            Transfers.Text = "Transfers";
+            Transfers.UseVisualStyleBackColor = true;
             // 
             // AddItemToTransfer
             // 
@@ -1838,6 +1858,137 @@
             TransferGridView.TabIndex = 59;
             TransferGridView.CellClick += TransferGridView_CellClick;
             // 
+            // Reports
+            // 
+            Reports.Controls.Add(WarehousesListBox);
+            Reports.Controls.Add(GenereteReport);
+            Reports.Controls.Add(ReportTypeComboBox);
+            Reports.Controls.Add(label44);
+            Reports.Controls.Add(ReportToDate);
+            Reports.Controls.Add(label41);
+            Reports.Controls.Add(ReportFromDate);
+            Reports.Controls.Add(label38);
+            Reports.Controls.Add(ReportGridView);
+            Reports.Location = new Point(4, 84);
+            Reports.Name = "Reports";
+            Reports.Padding = new Padding(3);
+            Reports.Size = new Size(1358, 541);
+            Reports.TabIndex = 7;
+            Reports.Text = "Reports";
+            Reports.UseVisualStyleBackColor = true;
+            // 
+            // WarehousesListBox
+            // 
+            WarehousesListBox.FormattingEnabled = true;
+            WarehousesListBox.Location = new Point(957, 37);
+            WarehousesListBox.Name = "WarehousesListBox";
+            WarehousesListBox.Size = new Size(310, 158);
+            WarehousesListBox.TabIndex = 80;
+            // 
+            // GenereteReport
+            // 
+            GenereteReport.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            GenereteReport.Location = new Point(590, 135);
+            GenereteReport.Name = "GenereteReport";
+            GenereteReport.Size = new Size(267, 43);
+            GenereteReport.TabIndex = 79;
+            GenereteReport.Text = "Generate Report";
+            GenereteReport.UseVisualStyleBackColor = true;
+            GenereteReport.Click += GenereteReport_Click;
+            // 
+            // ReportTypeComboBox
+            // 
+            ReportTypeComboBox.FormattingEnabled = true;
+            ReportTypeComboBox.Items.AddRange(new object[] { "Warehouse Report", "Item Report", "Item Movements During a Period", "Expired Items Report", "Near Expiration Items Report" });
+            ReportTypeComboBox.Location = new Point(590, 78);
+            ReportTypeComboBox.Name = "ReportTypeComboBox";
+            ReportTypeComboBox.Size = new Size(267, 28);
+            ReportTypeComboBox.TabIndex = 78;
+            ReportTypeComboBox.SelectedIndexChanged += ReportTypeComboBox_SelectedIndexChanged;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Location = new Point(501, 81);
+            label44.Name = "label44";
+            label44.Size = new Size(57, 20);
+            label44.TabIndex = 77;
+            label44.Text = "Report";
+            // 
+            // ReportToDate
+            // 
+            ReportToDate.Location = new Point(144, 143);
+            ReportToDate.Name = "ReportToDate";
+            ReportToDate.Size = new Size(310, 27);
+            ReportToDate.TabIndex = 76;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(61, 148);
+            label41.Name = "label41";
+            label41.Size = new Size(26, 20);
+            label41.TabIndex = 75;
+            label41.Text = "To";
+            // 
+            // ReportFromDate
+            // 
+            ReportFromDate.Location = new Point(144, 72);
+            ReportFromDate.Name = "ReportFromDate";
+            ReportFromDate.Size = new Size(310, 27);
+            ReportFromDate.TabIndex = 74;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(61, 77);
+            label38.Name = "label38";
+            label38.Size = new Size(46, 20);
+            label38.TabIndex = 73;
+            label38.Text = "From";
+            // 
+            // ReportGridView
+            // 
+            dataGridViewCellStyle41.BackColor = Color.White;
+            dataGridViewCellStyle41.ForeColor = Color.Black;
+            dataGridViewCellStyle41.SelectionBackColor = Color.DarkCyan;
+            ReportGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            ReportGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ReportGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ReportGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = Color.Teal;
+            dataGridViewCellStyle42.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle42.ForeColor = Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = Color.White;
+            dataGridViewCellStyle42.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle42.WrapMode = DataGridViewTriState.True;
+            ReportGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            ReportGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle43.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = Color.White;
+            dataGridViewCellStyle43.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle43.ForeColor = Color.Black;
+            dataGridViewCellStyle43.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle43.SelectionForeColor = Color.White;
+            dataGridViewCellStyle43.WrapMode = DataGridViewTriState.False;
+            ReportGridView.DefaultCellStyle = dataGridViewCellStyle43;
+            ReportGridView.Dock = DockStyle.Bottom;
+            ReportGridView.EnableHeadersVisualStyles = false;
+            ReportGridView.Location = new Point(3, 215);
+            ReportGridView.Name = "ReportGridView";
+            dataGridViewCellStyle44.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = Color.White;
+            dataGridViewCellStyle44.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dataGridViewCellStyle44.ForeColor = Color.Black;
+            dataGridViewCellStyle44.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle44.SelectionForeColor = Color.White;
+            dataGridViewCellStyle44.WrapMode = DataGridViewTriState.True;
+            ReportGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            ReportGridView.RowHeadersWidth = 51;
+            ReportGridView.Size = new Size(1352, 323);
+            ReportGridView.TabIndex = 17;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Teal;
@@ -1853,13 +2004,13 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(472, 24);
+            label1.Location = new Point(459, 24);
             label1.Name = "label1";
-            label1.Size = new Size(431, 67);
+            label1.Size = new Size(543, 67);
             label1.TabIndex = 0;
-            label1.Text = "MY WAREHOUSE";
+            label1.Text = "WAREHOUSE SYSTEM";
             // 
-            // Form1
+            // Application
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1869,9 +2020,10 @@
             Controls.Add(panel1);
             Controls.Add(Tabs);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
-            Name = "Form1";
+            Name = "Application";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Warehouse";
+            Load += Application_Load;
             Tabs.ResumeLayout(false);
             Items.ResumeLayout(false);
             Items.PerformLayout();
@@ -1893,10 +2045,13 @@
             ReleaseOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).EndInit();
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            Transfers.ResumeLayout(false);
+            Transfers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)TransferDetailsGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)TransferGridView).EndInit();
+            Reports.ResumeLayout(false);
+            Reports.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ReportGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -2021,7 +2176,7 @@
         private Label label36;
         private TextBox ReleaseOrderNumberTextBox;
         private DataGridView ReleaseOrderGridView;
-        private TabPage tabPage1;
+        private TabPage Transfers;
         private Button AddItemToTransfer;
         private Button EditDeleteItemTransfer;
         private Label label37;
@@ -2037,5 +2192,15 @@
         private Label label42;
         private Label label43;
         private DataGridView TransferGridView;
+        private TabPage Reports;
+        private DataGridView ReportGridView;
+        private DateTimePicker ReportFromDate;
+        private Label label38;
+        private ComboBox ReportTypeComboBox;
+        private Label label44;
+        private DateTimePicker ReportToDate;
+        private Label label41;
+        private Button GenereteReport;
+        private CheckedListBox WarehousesListBox;
     }
 }
