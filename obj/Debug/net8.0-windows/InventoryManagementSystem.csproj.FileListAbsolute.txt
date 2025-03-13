@@ -153,3 +153,6 @@ D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddReleaseOrderItem.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.EditReleaseOrderItem.resources
 D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.EditSupplyOrderItem.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.EditTransferItem.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewItemToTransfer.resources
+D:\My ITI\C#\Entity Framework Project\InventoryManagementSystem\obj\Debug\net8.0-windows\InventoryManagementSystem.Screens.AddNewTransfer.resources

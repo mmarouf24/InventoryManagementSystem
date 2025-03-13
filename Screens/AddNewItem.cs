@@ -24,13 +24,12 @@ namespace InventoryManagementSystem
 
         private void ConfirmAddItem_Click(object sender, EventArgs e)
         {
-            if (ItemNameTextBox.Text == "" || ItemCodeTextBox.Text == "" || ItemQuantityTextBox.Text == "")
+            if (ItemNameTextBox.Text == "" || ItemCodeTextBox.Text == "")
                 MessageBox.Show("Enter Data in all Fields !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 string name = ItemNameTextBox.Text.Trim();
                 string code = ItemCodeTextBox.Text.Trim();
-                int quantity = int.Parse(ItemQuantityTextBox.Text.Trim());
                 string unit = ItemUnitComboBox.SelectedItem.ToString();
 
                 var ifExistedItem = _Context.Items.FirstOrDefault(i => i.Code == code);
@@ -41,7 +40,6 @@ namespace InventoryManagementSystem
 
                     item.Code = code;
                     item.Name = name;
-                    item.Quantity = quantity;
                     item.Unit = unit;
                     _Context.Items.Add(item);
                     _Context.SaveChanges();

@@ -106,6 +106,8 @@ namespace InventoryManagementSystem.Screens
                     _Context.SupplyOrderDetails.Add(item);
                     MessageBox.Show("Successfully Added Supply Order and Item To it !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     _Context.SaveChanges();
+                    UpdateStockAfterSupply(supplyOrder);
+                    
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                     SupplyOrderItemExpiryTextBox.Text = SupplyOrderItemQTextBox.Text = "";
@@ -120,7 +122,32 @@ namespace InventoryManagementSystem.Screens
 
             }
         }
+          private void UpdateStockAfterSupply(SupplyOrder supplyOrder)
+        {
+            foreach (var detail in supplyOrder.SupplyOrderDetails)
+            {
+                var stock = _Context.Stocks
+                    .FirstOrDefault(s => s.WarehouseID == supplyOrder.WarehouseID && s.ItemID == detail.ItemID);
 
+                if (stock != null)
+                {
+                    stock.Quantity += detail.Quantity;
+                }
+                else
+                {
+                    stock = new Stock
+                    {
+                        WarehouseID = supplyOrder.WarehouseID,
+                        ItemID = detail.ItemID,
+                        Quantity = detail.Quantity
+                    };
+                    _Context.Stocks.Add(stock);
+                }
+            }
+
+            _Context.SaveChanges();
+        }
+       
         private void CancelAdd_Click(object sender, EventArgs e)
         {
             this.Close();

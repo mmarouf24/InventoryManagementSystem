@@ -60,6 +60,14 @@
             DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle33 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle34 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle35 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle36 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle37 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
             Tabs = new TabControl();
             Items = new TabPage();
             AddItem = new Button();
@@ -71,10 +79,8 @@
             UnitComboBox = new ComboBox();
             ItemUnitLabel = new Label();
             EditItem = new Button();
-            ItemQuantityLabel = new Label();
             ItemCodeLabel = new Label();
             ItemNameLabel = new Label();
-            ItemQuantityTextBox = new TextBox();
             ItemCodeTextBox = new TextBox();
             ItemNameTextBox = new TextBox();
             ItemsGridView = new DataGridView();
@@ -177,6 +183,22 @@
             label36 = new Label();
             ReleaseOrderNumberTextBox = new TextBox();
             ReleaseOrderGridView = new DataGridView();
+            tabPage1 = new TabPage();
+            AddItemToTransfer = new Button();
+            EditDeleteItemTransfer = new Button();
+            label37 = new Label();
+            TransferDetailsGridView = new DataGridView();
+            ToWarehousesComboBox = new ComboBox();
+            FromWarehousesComboBox = new ComboBox();
+            TransferDateItem = new DateTimePicker();
+            AddNewTransfer = new Button();
+            TransferIDComboBox = new ComboBox();
+            label39 = new Label();
+            label40 = new Label();
+            EditTransfer = new Button();
+            label42 = new Label();
+            label43 = new Label();
+            TransferGridView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
             Tabs.SuspendLayout();
@@ -194,6 +216,9 @@
             ReleaseOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).BeginInit();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TransferDetailsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TransferGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -205,6 +230,7 @@
             Tabs.Controls.Add(Customers);
             Tabs.Controls.Add(SupplyOrders);
             Tabs.Controls.Add(ReleaseOrders);
+            Tabs.Controls.Add(tabPage1);
             Tabs.Dock = DockStyle.Bottom;
             Tabs.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Tabs.ItemSize = new Size(100, 80);
@@ -226,10 +252,8 @@
             Items.Controls.Add(UnitComboBox);
             Items.Controls.Add(ItemUnitLabel);
             Items.Controls.Add(EditItem);
-            Items.Controls.Add(ItemQuantityLabel);
             Items.Controls.Add(ItemCodeLabel);
             Items.Controls.Add(ItemNameLabel);
-            Items.Controls.Add(ItemQuantityTextBox);
             Items.Controls.Add(ItemCodeTextBox);
             Items.Controls.Add(ItemNameTextBox);
             Items.Controls.Add(ItemsGridView);
@@ -271,7 +295,7 @@
             // 
             // DeleteItem
             // 
-            DeleteItem.Location = new Point(631, 121);
+            DeleteItem.Location = new Point(575, 117);
             DeleteItem.Name = "DeleteItem";
             DeleteItem.Size = new Size(150, 55);
             DeleteItem.TabIndex = 12;
@@ -301,7 +325,7 @@
             // 
             UnitComboBox.FormattingEnabled = true;
             UnitComboBox.Items.AddRange(new object[] { "Kilogram (kg)", "Piece" });
-            UnitComboBox.Location = new Point(633, 75);
+            UnitComboBox.Location = new Point(693, 29);
             UnitComboBox.Name = "UnitComboBox";
             UnitComboBox.Size = new Size(148, 31);
             UnitComboBox.TabIndex = 9;
@@ -309,7 +333,7 @@
             // ItemUnitLabel
             // 
             ItemUnitLabel.AutoSize = true;
-            ItemUnitLabel.Location = new Point(515, 78);
+            ItemUnitLabel.Location = new Point(575, 32);
             ItemUnitLabel.Name = "ItemUnitLabel";
             ItemUnitLabel.Size = new Size(44, 23);
             ItemUnitLabel.TabIndex = 8;
@@ -317,22 +341,13 @@
             // 
             // EditItem
             // 
-            EditItem.Location = new Point(787, 121);
+            EditItem.Location = new Point(731, 117);
             EditItem.Name = "EditItem";
             EditItem.Size = new Size(150, 55);
             EditItem.TabIndex = 7;
             EditItem.Text = "Edit Item";
             EditItem.UseVisualStyleBackColor = true;
             EditItem.Click += EditItem_Click;
-            // 
-            // ItemQuantityLabel
-            // 
-            ItemQuantityLabel.AutoSize = true;
-            ItemQuantityLabel.Location = new Point(515, 28);
-            ItemQuantityLabel.Name = "ItemQuantityLabel";
-            ItemQuantityLabel.Size = new Size(80, 23);
-            ItemQuantityLabel.TabIndex = 6;
-            ItemQuantityLabel.Text = "Quantity";
             // 
             // ItemCodeLabel
             // 
@@ -351,13 +366,6 @@
             ItemNameLabel.Size = new Size(57, 23);
             ItemNameLabel.TabIndex = 4;
             ItemNameLabel.Text = "Name";
-            // 
-            // ItemQuantityTextBox
-            // 
-            ItemQuantityTextBox.Location = new Point(631, 25);
-            ItemQuantityTextBox.Name = "ItemQuantityTextBox";
-            ItemQuantityTextBox.Size = new Size(310, 30);
-            ItemQuantityTextBox.TabIndex = 3;
             // 
             // ItemCodeTextBox
             // 
@@ -1605,6 +1613,231 @@
             ReleaseOrderGridView.Size = new Size(671, 323);
             ReleaseOrderGridView.TabIndex = 39;
             // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(AddItemToTransfer);
+            tabPage1.Controls.Add(EditDeleteItemTransfer);
+            tabPage1.Controls.Add(label37);
+            tabPage1.Controls.Add(TransferDetailsGridView);
+            tabPage1.Controls.Add(ToWarehousesComboBox);
+            tabPage1.Controls.Add(FromWarehousesComboBox);
+            tabPage1.Controls.Add(TransferDateItem);
+            tabPage1.Controls.Add(AddNewTransfer);
+            tabPage1.Controls.Add(TransferIDComboBox);
+            tabPage1.Controls.Add(label39);
+            tabPage1.Controls.Add(label40);
+            tabPage1.Controls.Add(EditTransfer);
+            tabPage1.Controls.Add(label42);
+            tabPage1.Controls.Add(label43);
+            tabPage1.Controls.Add(TransferGridView);
+            tabPage1.Location = new Point(4, 84);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1358, 541);
+            tabPage1.TabIndex = 6;
+            tabPage1.Text = "Transfers";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // AddItemToTransfer
+            // 
+            AddItemToTransfer.Location = new Point(334, 125);
+            AddItemToTransfer.Name = "AddItemToTransfer";
+            AddItemToTransfer.Size = new Size(148, 47);
+            AddItemToTransfer.TabIndex = 78;
+            AddItemToTransfer.Text = "Add Item";
+            AddItemToTransfer.UseVisualStyleBackColor = true;
+            AddItemToTransfer.Click += AddItemToTransfer_Click;
+            // 
+            // EditDeleteItemTransfer
+            // 
+            EditDeleteItemTransfer.Location = new Point(169, 125);
+            EditDeleteItemTransfer.Name = "EditDeleteItemTransfer";
+            EditDeleteItemTransfer.Size = new Size(148, 47);
+            EditDeleteItemTransfer.TabIndex = 77;
+            EditDeleteItemTransfer.Text = "Edit or Delete";
+            EditDeleteItemTransfer.UseVisualStyleBackColor = true;
+            EditDeleteItemTransfer.Click += EditDeleteItemTransfer_Click;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(43, 138);
+            label37.Name = "label37";
+            label37.Size = new Size(49, 20);
+            label37.TabIndex = 76;
+            label37.Text = "Items";
+            // 
+            // TransferDetailsGridView
+            // 
+            dataGridViewCellStyle33.BackColor = Color.White;
+            dataGridViewCellStyle33.ForeColor = Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = Color.DarkCyan;
+            TransferDetailsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            TransferDetailsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            TransferDetailsGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            TransferDetailsGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle34.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = Color.Teal;
+            dataGridViewCellStyle34.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle34.ForeColor = Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = Color.White;
+            dataGridViewCellStyle34.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle34.WrapMode = DataGridViewTriState.True;
+            TransferDetailsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            TransferDetailsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle35.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = Color.White;
+            dataGridViewCellStyle35.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle35.ForeColor = Color.Black;
+            dataGridViewCellStyle35.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle35.SelectionForeColor = Color.White;
+            dataGridViewCellStyle35.WrapMode = DataGridViewTriState.False;
+            TransferDetailsGridView.DefaultCellStyle = dataGridViewCellStyle35;
+            TransferDetailsGridView.EnableHeadersVisualStyles = false;
+            TransferDetailsGridView.Location = new Point(691, 212);
+            TransferDetailsGridView.Name = "TransferDetailsGridView";
+            dataGridViewCellStyle36.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = Color.White;
+            dataGridViewCellStyle36.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle36.ForeColor = Color.Black;
+            dataGridViewCellStyle36.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle36.SelectionForeColor = Color.White;
+            dataGridViewCellStyle36.WrapMode = DataGridViewTriState.True;
+            TransferDetailsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            TransferDetailsGridView.RowHeadersWidth = 51;
+            TransferDetailsGridView.Size = new Size(664, 323);
+            TransferDetailsGridView.TabIndex = 75;
+            // 
+            // ToWarehousesComboBox
+            // 
+            ToWarehousesComboBox.FormattingEnabled = true;
+            ToWarehousesComboBox.Location = new Point(631, 70);
+            ToWarehousesComboBox.Name = "ToWarehousesComboBox";
+            ToWarehousesComboBox.Size = new Size(310, 28);
+            ToWarehousesComboBox.TabIndex = 74;
+            // 
+            // FromWarehousesComboBox
+            // 
+            FromWarehousesComboBox.FormattingEnabled = true;
+            FromWarehousesComboBox.Location = new Point(169, 70);
+            FromWarehousesComboBox.Name = "FromWarehousesComboBox";
+            FromWarehousesComboBox.Size = new Size(313, 28);
+            FromWarehousesComboBox.TabIndex = 73;
+            // 
+            // TransferDateItem
+            // 
+            TransferDateItem.Location = new Point(631, 19);
+            TransferDateItem.Name = "TransferDateItem";
+            TransferDateItem.Size = new Size(310, 27);
+            TransferDateItem.TabIndex = 72;
+            // 
+            // AddNewTransfer
+            // 
+            AddNewTransfer.Location = new Point(1011, 67);
+            AddNewTransfer.Name = "AddNewTransfer";
+            AddNewTransfer.Size = new Size(310, 55);
+            AddNewTransfer.TabIndex = 71;
+            AddNewTransfer.Text = "Add New Trasnfer";
+            AddNewTransfer.UseVisualStyleBackColor = true;
+            AddNewTransfer.Click += AddNewTransfer_Click;
+            // 
+            // TransferIDComboBox
+            // 
+            TransferIDComboBox.FormattingEnabled = true;
+            TransferIDComboBox.Location = new Point(169, 16);
+            TransferIDComboBox.Name = "TransferIDComboBox";
+            TransferIDComboBox.Size = new Size(313, 28);
+            TransferIDComboBox.TabIndex = 67;
+            TransferIDComboBox.SelectedIndexChanged += TransferIDComboBox_SelectedIndexChanged;
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(43, 16);
+            label39.Name = "label39";
+            label39.Size = new Size(87, 20);
+            label39.TabIndex = 66;
+            label39.Text = "Transfer ID";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(515, 24);
+            label40.Name = "label40";
+            label40.Size = new Size(104, 20);
+            label40.TabIndex = 65;
+            label40.Text = "Transfer Date";
+            // 
+            // EditTransfer
+            // 
+            EditTransfer.Location = new Point(631, 117);
+            EditTransfer.Name = "EditTransfer";
+            EditTransfer.Size = new Size(150, 55);
+            EditTransfer.TabIndex = 64;
+            EditTransfer.Text = "Edit Trasnfer";
+            EditTransfer.UseVisualStyleBackColor = true;
+            EditTransfer.Click += EditTransfer_Click;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(43, 67);
+            label42.Name = "label42";
+            label42.Size = new Size(46, 20);
+            label42.TabIndex = 62;
+            label42.Text = "From";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(542, 73);
+            label43.Name = "label43";
+            label43.Size = new Size(26, 20);
+            label43.TabIndex = 61;
+            label43.Text = "To";
+            // 
+            // TransferGridView
+            // 
+            dataGridViewCellStyle37.BackColor = Color.White;
+            dataGridViewCellStyle37.ForeColor = Color.Black;
+            dataGridViewCellStyle37.SelectionBackColor = Color.DarkCyan;
+            TransferGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            TransferGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            TransferGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            TransferGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle38.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = Color.Teal;
+            dataGridViewCellStyle38.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle38.ForeColor = Color.White;
+            dataGridViewCellStyle38.SelectionBackColor = Color.White;
+            dataGridViewCellStyle38.SelectionForeColor = Color.Teal;
+            dataGridViewCellStyle38.WrapMode = DataGridViewTriState.True;
+            TransferGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            TransferGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle39.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = Color.White;
+            dataGridViewCellStyle39.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle39.ForeColor = Color.Black;
+            dataGridViewCellStyle39.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle39.SelectionForeColor = Color.White;
+            dataGridViewCellStyle39.WrapMode = DataGridViewTriState.False;
+            TransferGridView.DefaultCellStyle = dataGridViewCellStyle39;
+            TransferGridView.EnableHeadersVisualStyles = false;
+            TransferGridView.Location = new Point(3, 212);
+            TransferGridView.Name = "TransferGridView";
+            dataGridViewCellStyle40.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = Color.White;
+            dataGridViewCellStyle40.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle40.ForeColor = Color.Black;
+            dataGridViewCellStyle40.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle40.SelectionForeColor = Color.White;
+            dataGridViewCellStyle40.WrapMode = DataGridViewTriState.True;
+            TransferGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            TransferGridView.RowHeadersWidth = 51;
+            TransferGridView.Size = new Size(671, 323);
+            TransferGridView.TabIndex = 59;
+            TransferGridView.CellClick += TransferGridView_CellClick;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Teal;
@@ -1660,6 +1893,10 @@
             ReleaseOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderItemsGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)ReleaseOrderGridView).EndInit();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TransferDetailsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TransferGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -1673,10 +1910,8 @@
         private TabPage Suppliers;
         private DataGridView ItemsGridView;
         private Button EditItem;
-        private Label ItemQuantityLabel;
         private Label ItemCodeLabel;
         private Label ItemNameLabel;
-        private TextBox ItemQuantityTextBox;
         private TextBox ItemCodeTextBox;
         private TextBox ItemNameTextBox;
         private Label ItemUnitLabel;
@@ -1786,5 +2021,21 @@
         private Label label36;
         private TextBox ReleaseOrderNumberTextBox;
         private DataGridView ReleaseOrderGridView;
+        private TabPage tabPage1;
+        private Button AddItemToTransfer;
+        private Button EditDeleteItemTransfer;
+        private Label label37;
+        private DataGridView TransferDetailsGridView;
+        private ComboBox ToWarehousesComboBox;
+        private ComboBox FromWarehousesComboBox;
+        private DateTimePicker TransferDateItem;
+        private Button AddNewTransfer;
+        private ComboBox TransferIDComboBox;
+        private Label label39;
+        private Label label40;
+        private Button EditTransfer;
+        private Label label42;
+        private Label label43;
+        private DataGridView TransferGridView;
     }
 }

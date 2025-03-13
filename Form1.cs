@@ -14,7 +14,7 @@ namespace InventoryManagementSystem
             _Context = new EFModel();
             _Context.Database.EnsureCreated();
 
-            //Warehouses Data
+            //Warehouses Data start
             foreach (var warehouse in _Context.Warehouses.ToList())
             {
                 WarehouseIdComboBox.Items.Add(warehouse.WarehouseID);
@@ -24,7 +24,7 @@ namespace InventoryManagementSystem
             ConfigWarehousesTextBoxes();
             LoadWarehouseData();
             WarehouseIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            //Warehouses Data End
 
             //Items Data
             foreach (var item in _Context.Items.ToList())
@@ -60,7 +60,7 @@ namespace InventoryManagementSystem
             LoadCustomersData();
             CustomerIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            //Supply Order Date
+            //Supply Order Data
             foreach (var supplyOrder in _Context.SupplyOrders.ToList())
             {
                 SupplyOrderIdComboBox.Items.Add(supplyOrder.SupplyOrderID);
@@ -75,7 +75,7 @@ namespace InventoryManagementSystem
             SupplyOrdersWaresComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             SupplyOrderSuppliersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            //Release Order Date
+            //Release Order Data
             foreach (var releaseOrder in _Context.ReleaseOrders.ToList())
             {
                 ReleaseOrderIdComboBox.Items.Add(releaseOrder.ReleaseOrderID);
@@ -90,13 +90,37 @@ namespace InventoryManagementSystem
             ReleaseOrdersWaresComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ReleaseOrderCustomersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            //Transfer Items Data
+            foreach (var warehouse in _Context.Warehouses.ToList())
+            {
+                FromWarehousesComboBox.Items.Add(warehouse.Name);
+                ToWarehousesComboBox.Items.Add(warehouse.Name);
+            }
+            FromWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ToWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
+            foreach (var transfer in _Context.StockTransfers.ToList())
+            {
+                TransferIDComboBox.Items.Add(transfer.TransferID);
+               
+            }
+
+            if (TransferIDComboBox.Items.Count > 0)
+                TransferIDComboBox.SelectedIndex = 0;
+            ConfigTransfersTextBoxes();
+            LoadTransfersData();
+            TransferIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            FromWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ToWarehousesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         //Item Start
         #region Item
         private void LoadItemsData()
         {
-            ItemsGridView.DataSource = _Context.Items.Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit }).ToList();
+            ItemsGridView.DataSource = _Context.Items.Select(i => new { i.ItemID, i.Code, i.Name, i.Unit }).ToList();
 
         }
 
@@ -107,7 +131,7 @@ namespace InventoryManagementSystem
             {
                 ItemCodeTextBox.Text = item.Code;
                 ItemNameTextBox.Text = item.Name;
-                ItemQuantityTextBox.Text = item.Quantity.ToString();
+
 
                 UnitComboBox.SelectedItem = item.Unit;
             }
@@ -117,18 +141,13 @@ namespace InventoryManagementSystem
         {
 
 
-            string name = ItemNameTextBox.Text.Trim();
-            string code = ItemCodeTextBox.Text.Trim();
-            int quantity = int.Parse(ItemQuantityTextBox.Text.Trim());
-            string unit = UnitComboBox.SelectedItem.ToString();
-
-            if (!int.TryParse(ItemQuantityTextBox.Text, out int quan))
-            {
-                MessageBox.Show("Please Enter a Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (ItemIDComboBox.Items.Count > 0)
             {
+            string name = ItemNameTextBox.Text.Trim();
+            string code = ItemCodeTextBox.Text.Trim();
+
+            string unit = UnitComboBox.SelectedItem.ToString();
+
                 bool isCodeExists = _Context.Items.Any(i => i.Code == code && i.ItemID != int.Parse(ItemIDComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -143,7 +162,7 @@ namespace InventoryManagementSystem
 
                 ExistedItem.Code = code;
                 ExistedItem.Name = name;
-                ExistedItem.Quantity = quantity;
+
                 ExistedItem.Unit = unit;
                 _Context.SaveChanges();
                 MessageBox.Show("Successfully Edited Item !", "Success", MessageBoxButtons.OK);
@@ -187,14 +206,14 @@ namespace InventoryManagementSystem
             if (string.IsNullOrEmpty(Term))
             {
                 ItemsGridView.DataSource = _Context.Items
-                    .Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit })
+                    .Select(i => new { i.ItemID, i.Code, i.Name, i.Unit })
                     .ToList();
                 return;
             }
 
             var ExistedItems = _Context.Items
                             .Where(i => i.Name.ToLower().Contains(Term))
-                            .Select(i => new { i.ItemID, i.Code, i.Name, i.Quantity, i.Unit })
+                            .Select(i => new { i.ItemID, i.Code, i.Name, i.Unit })
                             .ToList();
             if (ExistedItems.Any())
                 ItemsGridView.DataSource = ExistedItems;
@@ -232,12 +251,12 @@ namespace InventoryManagementSystem
 
         private void EditWarehouse_Click(object sender, EventArgs e)
         {
+            if (WarehouseIdComboBox.Items.Count > 0)
+            {
             string name = WarehouseNameTextBox.Text.Trim();
             string address = WarehouseAddressTextBox.Text.Trim();
             string manager = WarehouseManagerTextBox.Text.Trim();
 
-            if (WarehouseIdComboBox.Items.Count > 0)
-            {
                 bool isCodeExists = _Context.Warehouses.Any(i => i.Name == name && i.WarehouseID != int.Parse(WarehouseIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -344,6 +363,8 @@ namespace InventoryManagementSystem
 
         private void EditSupplier_Click(object sender, EventArgs e)
         {
+            if (SupplierIdComboBox.Items.Count > 0)
+            {
             string name = SupplierNameTextBox.Text.Trim();
             string phone = SupplierPhoneTextBox.Text.Trim();
             string mobile = SupplierMobileTextBox.Text.Trim();
@@ -351,8 +372,6 @@ namespace InventoryManagementSystem
             string email = SupplierEmailTextBox.Text.Trim();
             string website = SupplierWebsiteTextBox.Text.Trim();
 
-            if (SupplierIdComboBox.Items.Count > 0)
-            {
                 bool isCodeExists = _Context.Suppliers.Any(i => i.Mobile == mobile && i.SupplierID != int.Parse(SupplierIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -459,6 +478,8 @@ namespace InventoryManagementSystem
 
         private void EditCustomer_Click(object sender, EventArgs e)
         {
+            if (CustomerIdComboBox.Items.Count > 0)
+            {
             string name = CustomerNameTextBox.Text.Trim();
             string phone = CustomerPhoneTextBox.Text.Trim();
             string mobile = CustomerMobileTextBox.Text.Trim();
@@ -466,8 +487,6 @@ namespace InventoryManagementSystem
             string email = CustomerEmailTextBox.Text.Trim();
             string website = CustomerWebsiteTextBox.Text.Trim();
 
-            if (CustomerIdComboBox.Items.Count > 0)
-            {
                 bool isCodeExists = _Context.Customers.Any(i => i.Mobile == mobile && i.CustomerID != int.Parse(CustomerIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -649,14 +668,14 @@ namespace InventoryManagementSystem
 
         private void EditSupplyOrder_Click(object sender, EventArgs e)
         {
+
+            if (SupplyOrderIdComboBox.Items.Count > 0)
+            {
             string ordernumber = SupplyOrderNumberTextBox.Text.Trim();
             DateTime orderDate = SupplyOrderDate.Value;
 
             string warehouse = SupplyOrdersWaresComboBox.SelectedItem.ToString();
             string supplier = SupplyOrderSuppliersComboBox.SelectedItem.ToString();
-
-            if (SupplyOrderIdComboBox.Items.Count > 0)
-            {
                 bool isCodeExists = _Context.SupplyOrders.Any(i => i.OrderNumber == ordernumber && i.SupplyOrderID != int.Parse(SupplyOrderIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -725,9 +744,9 @@ namespace InventoryManagementSystem
             {
                 SupplyOrderIdComboBox.Items.Add(_Context.SupplyOrders.Order().Last().SupplyOrderID);
                 LoadSupplyOrdersData();
+
             }
         }
-
         private void SupplyOrderSearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string Term = SupplyOrderSearchTextBox.Text.Trim().ToLower();
@@ -853,14 +872,14 @@ namespace InventoryManagementSystem
 
         private void EditReleaseOrder_Click(object sender, EventArgs e)
         {
+
+            if (ReleaseOrderIdComboBox.Items.Count > 0)
+            {
             string ordernumber = ReleaseOrderNumberTextBox.Text.Trim();
             DateTime orderDate = ReleaseOrderDate.Value;
 
             string warehouse = ReleaseOrdersWaresComboBox.SelectedItem.ToString();
             string customer = ReleaseOrderCustomersComboBox.SelectedItem.ToString();
-
-            if (ReleaseOrderIdComboBox.Items.Count > 0)
-            {
                 bool isCodeExists = _Context.ReleaseOrders.Any(i => i.OrderNumber == ordernumber && i.ReleaseOrderID != int.Parse(ReleaseOrderIdComboBox.SelectedItem.ToString()));
 
                 if (isCodeExists)
@@ -959,6 +978,157 @@ namespace InventoryManagementSystem
 
 
 
+        #endregion
+        //Release Order End
+
+
+        //Transfer Items Start
+        #region Transfer_Items
+        private void ConfigTransfersTextBoxes()
+        {
+            var item = _Context.StockTransfers.Find(TransferIDComboBox.SelectedItem);
+            if (item != null)
+            {
+                FromWarehousesComboBox.SelectedItem = item.FromWarehouse.Name;
+                ToWarehousesComboBox.SelectedItem = item.ToWarehouse.Name;
+                TransferDateItem.Value = item.TransferDate;
+
+            }
+        }
+        private void LoadTransfersData()
+        {
+            TransferGridView.DataSource = _Context.StockTransfers
+                                          .Select(i => new
+                                          {
+                                              i.TransferID,
+                                              From = i.FromWarehouse.Name != null ? i.FromWarehouse.Name : "N/A",
+                                              To = i.ToWarehouse.Name != null ? i.ToWarehouse.Name : "N/A",
+                                              i.TransferDate,
+
+                                          })
+                                        .ToList();
+
+            if (TransferGridView.Rows.Count > 0)
+            {
+                TransferGridView.Rows[0].Selected = true;
+                LoadTransferItems(Convert.ToInt32(TransferGridView.Rows[0].Cells["TransferID"].Value));
+            }
+
+        }
+        private void LoadTransferItems(int i)
+        {
+            if (i >= 0)
+            {
+
+                TransferDetailsGridView.DataSource = _Context.StockTransferDetails
+                                         .Where(d => d.TransferID == i)
+                                         .Select(m => new
+                                         {
+                                             
+                                             m.Item.Name,
+                                             m.Quantity,
+                                             SUpplier = m.Supplier.Name,
+                                             m.ProductionDate,
+                                             m.ExpirationPeriod
+
+                                         })
+                                          .ToList();
+
+            }
+        }
+
+        private void TransferGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int transferId = Convert.ToInt32(TransferGridView.Rows[e.RowIndex].Cells["TransferID"].Value);
+            LoadTransferItems(transferId);
+        }
+
+        private void TransferIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TransferIDComboBox.SelectedIndex >= 0)
+            {
+                LoadTransferItems(Convert.ToInt32(TransferIDComboBox.SelectedItem));
+            }
+            ConfigTransfersTextBoxes();
+        }
+
+        private void EditDeleteItemTransfer_Click(object sender, EventArgs e)
+        {
+            if (TransferDetailsGridView.Rows.Count > 0)
+            {
+                EditTransferItem editForm = new EditTransferItem(Convert.ToInt32(TransferIDComboBox.SelectedItem));
+                editForm.ShowDialog();
+                ConfigTransfersTextBoxes();
+                LoadTransfersData();
+
+            }
+            else
+            {
+                MessageBox.Show("No Items in this Order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddItemToTransfer_Click(object sender, EventArgs e)
+        {
+            AddNewItemToTransfer editForm = new AddNewItemToTransfer(Convert.ToInt32(TransferIDComboBox.SelectedItem));
+            editForm.ShowDialog();
+            ConfigTransfersTextBoxes();
+            LoadTransfersData();
+        }
+
+        private void EditTransfer_Click(object sender, EventArgs e)
+        {
+
+            if (TransferIDComboBox.Items.Count > 0)
+            {
+                DateTime transferDate = TransferDateItem.Value;
+
+                string fromWarehouse = FromWarehousesComboBox.SelectedItem.ToString();
+                string toWarehouse =ToWarehousesComboBox.SelectedItem.ToString();
+                if(fromWarehouse==toWarehouse)
+                {
+                    MessageBox.Show("Editing Failed!, Source and Distination cant be one", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ConfigTransfersTextBoxes();
+                    return;
+                }
+                bool isCodeExists = _Context.StockTransfers.Any(i => i.FromWarehouse.Name == fromWarehouse && i.ToWarehouse.Name == toWarehouse);
+
+                if (isCodeExists)
+                {
+                    MessageBox.Show("Editing Failed!, The Date you entered is already existed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var ExistedOrder = _Context.StockTransfers.Find(TransferIDComboBox.SelectedItem);
+
+                var fromWarehouseId = _Context.Warehouses.Where(i => i.Name == fromWarehouse).FirstOrDefault();
+                var toWarehouseId = _Context.Warehouses.Where(i => i.Name == toWarehouse).FirstOrDefault();
+               
+
+                ExistedOrder.FromWarehouseID =fromWarehouseId.WarehouseID;
+                ExistedOrder.ToWarehouseID = toWarehouseId.WarehouseID;
+                ExistedOrder.TransferDate = transferDate;
+                _Context.SaveChanges();
+                MessageBox.Show("Successfully Edited Tranfer !", "Success", MessageBoxButtons.OK);
+                LoadTransfersData();
+            }
+            else
+                MessageBox.Show("No Transfers To Edit!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void AddNewTransfer_Click(object sender, EventArgs e)
+        {
+            AddNewTransfer addForm = new AddNewTransfer();
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                TransferIDComboBox.Items.Add(_Context.StockTransfers.Order().Last().TransferID);
+                LoadTransfersData();
+            }
+
+        }
+
 
 
 
@@ -966,7 +1136,7 @@ namespace InventoryManagementSystem
 
 
         #endregion
-        //Supply Order End
+        //Transfer End
 
 
 

@@ -101,6 +101,9 @@ namespace InventoryManagementSystem.Screens
                     MessageBox.Show("Successfully Added Release Order and Item To it !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     _Context.SaveChanges();
                     this.DialogResult = DialogResult.OK;
+
+                    UpdateStockAfterRelease(releaseOrder);
+                   
                     this.Close();
                     ReleaseOrderItemQTextBox.Text = "";
 
@@ -113,7 +116,26 @@ namespace InventoryManagementSystem.Screens
 
             }
         }
+        private bool UpdateStockAfterRelease(ReleaseOrder releaseOrder)
+        {
+            foreach (var detail in releaseOrder.ReleaseOrderDetails)
+            {
+                var stock = _Context.Stocks
+                    .FirstOrDefault(s => s.WarehouseID == releaseOrder.WarehouseID && s.ItemID == detail.ItemID);
 
+                if (stock == null || stock.Quantity < detail.Quantity)
+                {
+                    MessageBox.Show($"The item {detail.Item.Name} is not available in the required quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;  
+                }
+
+                stock.Quantity -= detail.Quantity;
+            }
+
+            _Context.SaveChanges();
+            return true;
+        }
         private void CancelAdd_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -32,11 +32,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
             ItemCodeTextBox = new TextBox();
             ItemNameTextBox = new TextBox();
-            ItemQuantityTextBox = new TextBox();
             ItemUnitComboBox = new ComboBox();
             ConfirmAddItem = new Button();
             CancelAddItem = new Button();
@@ -86,20 +84,10 @@
             label3.TabIndex = 2;
             label3.Text = "Name";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(161, 300);
-            label4.Margin = new Padding(5, 0, 5, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(102, 31);
-            label4.TabIndex = 3;
-            label4.Text = "Quantity";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(161, 376);
+            label5.Location = new Point(161, 320);
             label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
             label5.Size = new Size(57, 31);
@@ -122,19 +110,11 @@
             ItemNameTextBox.Size = new Size(361, 38);
             ItemNameTextBox.TabIndex = 6;
             // 
-            // ItemQuantityTextBox
-            // 
-            ItemQuantityTextBox.Location = new Point(368, 297);
-            ItemQuantityTextBox.Margin = new Padding(5);
-            ItemQuantityTextBox.Name = "ItemQuantityTextBox";
-            ItemQuantityTextBox.Size = new Size(361, 38);
-            ItemQuantityTextBox.TabIndex = 7;
-            // 
             // ItemUnitComboBox
             // 
             ItemUnitComboBox.FormattingEnabled = true;
-            ItemUnitComboBox.Items.AddRange(new object[] { "Kilogram (kg)", "Piece" });
-            ItemUnitComboBox.Location = new Point(368, 376);
+            ItemUnitComboBox.Items.AddRange(new object[] { "Kilogram (kg)", "Liter (L)", "Piece" });
+            ItemUnitComboBox.Location = new Point(368, 320);
             ItemUnitComboBox.Margin = new Padding(5);
             ItemUnitComboBox.Name = "ItemUnitComboBox";
             ItemUnitComboBox.Size = new Size(175, 39);
@@ -142,7 +122,7 @@
             // 
             // ConfirmAddItem
             // 
-            ConfirmAddItem.Location = new Point(368, 455);
+            ConfirmAddItem.Location = new Point(368, 399);
             ConfirmAddItem.Margin = new Padding(5);
             ConfirmAddItem.Name = "ConfirmAddItem";
             ConfirmAddItem.Size = new Size(175, 45);
@@ -153,7 +133,7 @@
             // 
             // CancelAddItem
             // 
-            CancelAddItem.Location = new Point(554, 455);
+            CancelAddItem.Location = new Point(554, 399);
             CancelAddItem.Margin = new Padding(5);
             CancelAddItem.Name = "CancelAddItem";
             CancelAddItem.Size = new Size(175, 45);
@@ -170,11 +150,9 @@
             Controls.Add(CancelAddItem);
             Controls.Add(ConfirmAddItem);
             Controls.Add(ItemUnitComboBox);
-            Controls.Add(ItemQuantityTextBox);
             Controls.Add(ItemNameTextBox);
             Controls.Add(ItemCodeTextBox);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -196,11 +174,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Label label5;
         private TextBox ItemCodeTextBox;
         private TextBox ItemNameTextBox;
-        private TextBox ItemQuantityTextBox;
         private ComboBox ItemUnitComboBox;
         private Button ConfirmAddItem;
         private Button CancelAddItem;

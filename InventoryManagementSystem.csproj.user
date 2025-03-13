@@ -10,6 +10,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Screens\AddNewItemToTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Screens\AddNewReleaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Screens\AddNewSupplyOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Screens\AddNewTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Screens\AddNewWarehouse.cs">
@@ -32,6 +38,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Screens\EditSupplyOrderItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Screens\EditTransferItem.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
